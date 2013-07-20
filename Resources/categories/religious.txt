@@ -1,0 +1,8 @@
+Church
+Temples
+Synagogues
+Mosques
+Cathedrals
+Chapel
+Monastery
+Sanctuary

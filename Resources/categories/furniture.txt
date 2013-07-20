@@ -1,0 +1,19 @@
+Chairs
+Table
+Couch
+Bed
+Desks
+Sofa
+Dressers
+Loveseats
+Coffee Table
+Lamps
+Nightstands
+Ottoman
+Recliner
+Stools
+Futon
+Armoire
+Bookshelf
+Bookcase
+CabinetsShelves

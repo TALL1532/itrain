@@ -1,0 +1,9 @@
+Boulder
+Harvard
+Duke
+Yale
+Standford
+Princeton
+Penn State
+Brown
+Berkeley

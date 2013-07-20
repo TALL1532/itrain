@@ -1,0 +1,16 @@
+Diamonds
+Ruby
+Emeralds
+Sapphires
+Pearls
+Gems
+Gemstone
+Amethysts
+Opal
+Gold
+Topaz
+Garnet
+Silver
+Jade
+Quartz
+Turquoise

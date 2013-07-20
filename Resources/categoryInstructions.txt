@@ -1,0 +1,5 @@
+In this game, a series of single words will appear on the screen one at a time, along with a particular category. They will be presented in sets of two or more. You will be doing two things:
+
+1. First, you will decide if the word belongs to the given category or not. If the word belongs to the category, you should press the YES button (on the left hand side of the screen). If the word does not belong to the category, you should press the NO button (on the right hand side of the screen). Be sure to read each word and make your judgement quickly. 
+
+2. After you have made a series of these category judgments, your  second task will be to remember each word within a set. After the final word of that set, you will be asked to type out each of the words in order. Please do your best to recall the words in the order that you saw them. As you progress through the game, the number of words per set may increase.

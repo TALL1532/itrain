@@ -1,0 +1,15 @@
+AIDS
+Cancer
+Flu
+Diabetes
+Herpes
+Cold
+Leukemia
+Hepatitis
+Gonorrhea
+Malaria
+Smallpox
+Syphilis
+Measles
+Mono
+Tuberculosis

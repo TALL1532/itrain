@@ -1,0 +1,14 @@
+Sergeant
+Generals
+Lieutenant
+Captain
+Private
+Colonel
+Major
+Corporal
+Officer
+Commander
+Admiral
+Chief
+Soldier
+Cadet

@@ -1,0 +1,16 @@
+Magazines
+Books
+Newspapers
+Novel
+Journals
+Article
+Textbooks
+Pamphlets
+Internet
+Website
+Papers
+Encyclopedia
+Essays
+Flyers
+Letters
+Periodicals

@@ -1,0 +1,11 @@
+In this game, a series of simple sentences will appear on the screen one at a time. These sentences will be presented in sets of two or more. You will be doing two things:
+
+1. First, you will read each sentence to yourself. After you are done reading, decide whether the sentence is acceptable, by pressing the YES button (on the left hand side of the screen) or unacceptable, by pressing the NO button (on the right hand side of the screen). Please don't make this judgment based on the truth of the sentence, but rather judge whether the sentence is a plausible and acceptable sentence in English. Be sure to read each sentence and make your judgement quickly. 
+
+For example, an acceptable sentence would be: 
+Development of the screenplay was done by a team of three authors. 
+
+An example of an unacceptable sentence is:
+A laptop excited in utter and favorite day is confusing a melt.
+
+2. After you have read a series of these sentences and made the acceptability judgments, your second task will be to recall the last word of each sentence within a set. After the final sentence of the set, you will be asked to type out the LAST word of EACH of the sentences in that set in order. For example, for the sentences above, you would be asked to recall authors and melt. Please do your best to recall the words in the order that you saw them. As you progress through the game, the number of sentences per section may increase.

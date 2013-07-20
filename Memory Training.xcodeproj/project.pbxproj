@@ -1,0 +1,668 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* Memory_TrainingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Memory_TrainingAppDelegate.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		4B0D5F0F16C85331000F8651 /* LoggingSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0D5F0E16C85331000F8651 /* LoggingSingleton.m */; };
+		4B553CBD179A746F00E302C0 /* times.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C88179A746F00E302C0 /* times.txt */; };
+		4B553CBE179A746F00E302C0 /* maleNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C89179A746F00E302C0 /* maleNames.txt */; };
+		4B553CBF179A746F00E302C0 /* fish.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C8A179A746F00E302C0 /* fish.txt */; };
+		4B553CC0179A746F00E302C0 /* elements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C8B179A746F00E302C0 /* elements.txt */; };
+		4B553CC4179A746F00E302C0 /* kitchenware.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C8F179A746F00E302C0 /* kitchenware.txt */; };
+		4B553CC5179A746F00E302C0 /* liquids.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C90179A746F00E302C0 /* liquids.txt */; };
+		4B553CC6179A746F00E302C0 /* toys.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C91179A746F00E302C0 /* toys.txt */; };
+		4B553CC7179A746F00E302C0 /* reading.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C92179A746F00E302C0 /* reading.txt */; };
+		4B553CC8179A746F00E302C0 /* femaleNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C93179A746F00E302C0 /* femaleNames.txt */; };
+		4B553CC9179A746F00E302C0 /* green.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C94179A746F00E302C0 /* green.txt */; };
+		4B553CCA179A746F00E302C0 /* relatives.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C95179A746F00E302C0 /* relatives.txt */; };
+		4B553CCB179A746F00E302C0 /* woods.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C96179A746F00E302C0 /* woods.txt */; };
+		4B553CCC179A746F00E302C0 /* weather.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C97179A746F00E302C0 /* weather.txt */; };
+		4B553CCD179A746F00E302C0 /* weapons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C98179A746F00E302C0 /* weapons.txt */; };
+		4B553CCE179A746F00E302C0 /* vehicles.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C99179A746F00E302C0 /* vehicles.txt */; };
+		4B553CCF179A746F00E302C0 /* vegetables.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C9A179A746F00E302C0 /* vegetables.txt */; };
+		4B553CD0179A746F00E302C0 /* universities.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C9B179A746F00E302C0 /* universities.txt */; };
+		4B553CD1179A746F00E302C0 /* trees.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C9C179A746F00E302C0 /* trees.txt */; };
+		4B553CD2179A746F00E302C0 /* tools.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C9D179A746F00E302C0 /* tools.txt */; };
+		4B553CD3179A746F00E302C0 /* states.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C9E179A746F00E302C0 /* states.txt */; };
+		4B553CD4179A746F00E302C0 /* sports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C9F179A746F00E302C0 /* sports.txt */; };
+		4B553CD5179A746F00E302C0 /* speech.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CA0179A746F00E302C0 /* speech.txt */; };
+		4B553CD6179A746F00E302C0 /* snake.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CA1179A746F00E302C0 /* snake.txt */; };
+		4B553CD7179A746F00E302C0 /* sciences.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CA2179A746F00E302C0 /* sciences.txt */; };
+		4B553CD8179A746F00E302C0 /* religious.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CA3179A746F00E302C0 /* religious.txt */; };
+		4B553CD9179A746F00E302C0 /* politics.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CA4179A746F00E302C0 /* politics.txt */; };
+		4B553CDA179A746F00E302C0 /* occupation.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CA5179A746F00E302C0 /* occupation.txt */; };
+		4B553CDB179A746F00E302C0 /* noisy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CA6179A746F00E302C0 /* noisy.txt */; };
+		4B553CDC179A746F00E302C0 /* nature.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CA7179A746F00E302C0 /* nature.txt */; };
+		4B553CDD179A746F00E302C0 /* music.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CA8179A746F00E302C0 /* music.txt */; };
+		4B553CDE179A746F00E302C0 /* money.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CA9179A746F00E302C0 /* money.txt */; };
+		4B553CDF179A746F00E302C0 /* military.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CAA179A746F00E302C0 /* military.txt */; };
+		4B553CE0179A746F00E302C0 /* metals.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CAB179A746F00E302C0 /* metals.txt */; };
+		4B553CE1179A746F00E302C0 /* jewels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CAC179A746F00E302C0 /* jewels.txt */; };
+		4B553CE2179A746F00E302C0 /* instruments.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CAD179A746F00E302C0 /* instruments.txt */; };
+		4B553CE3179A746F00E302C0 /* insects.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CAE179A746F00E302C0 /* insects.txt */; };
+		4B553CE4179A746F00E302C0 /* herbs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CAF179A746F00E302C0 /* herbs.txt */; };
+		4B553CE5179A746F00E302C0 /* gardening.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CB0179A746F00E302C0 /* gardening.txt */; };
+		4B553CE6179A746F00E302C0 /* furniture.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CB1179A746F00E302C0 /* furniture.txt */; };
+		4B553CE7179A746F00E302C0 /* fuels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CB2179A746F00E302C0 /* fuels.txt */; };
+		4B553CE8179A746F00E302C0 /* fruit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CB3179A746F00E302C0 /* fruit.txt */; };
+		4B553CE9179A746F00E302C0 /* footwear.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CB4179A746F00E302C0 /* footwear.txt */; };
+		4B553CEA179A746F00E302C0 /* football.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CB5179A746F00E302C0 /* football.txt */; };
+		4B553CEB179A746F00E302C0 /* flowers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CB6179A746F00E302C0 /* flowers.txt */; };
+		4B553CEC179A746F00E302C0 /* flies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CB7179A746F00E302C0 /* flies.txt */; };
+		4B553CED179A746F00E302C0 /* fabric.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CB8179A746F00E302C0 /* fabric.txt */; };
+		4B553CEE179A746F00E302C0 /* dwellings.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CB9179A746F00E302C0 /* dwellings.txt */; };
+		4B553CEF179A746F00E302C0 /* drugs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CBA179A746F00E302C0 /* drugs.txt */; };
+		4B553CF0179A746F00E302C0 /* diseases.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CBB179A746F00E302C0 /* diseases.txt */; };
+		4B553CF1179A746F00E302C0 /* distances.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CBC179A746F00E302C0 /* distances.txt */; };
+		4B553CF4179A749500E302C0 /* trueSentences.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CF2179A749500E302C0 /* trueSentences.txt */; };
+		4B553CF5179A749500E302C0 /* falseSentences.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CF3179A749500E302C0 /* falseSentences.txt */; };
+		4B553CF9179A74E400E302C0 /* sentenceInstructions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CF6179A74E400E302C0 /* sentenceInstructions.txt */; };
+		4B553CFA179A74E400E302C0 /* decisionInstructions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CF7179A74E400E302C0 /* decisionInstructions.txt */; };
+		4B553CFB179A74E400E302C0 /* categoryInstructions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CF8179A74E400E302C0 /* categoryInstructions.txt */; };
+		4B553CFE179A74F400E302C0 /* non-words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CFC179A74F400E302C0 /* non-words.txt */; };
+		4B553CFF179A74F400E302C0 /* decisionWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553CFD179A74F400E302C0 /* decisionWords.txt */; };
+		4B553D01179A74FF00E302C0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B553D00179A74FF00E302C0 /* Icon.png */; };
+		4B553D03179A790100E302C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B553D02179A790100E302C0 /* main.m */; };
+		4B553D05179A792400E302C0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B553D04179A792400E302C0 /* MainWindow.xib */; };
+		4BC03C391780EC08002506BC /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC03C351780EC08002506BC /* libTestFlight.a */; };
+		4BC03C3A1780EC08002506BC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4BC03C361780EC08002506BC /* README.md */; };
+		4BC03C3B1780EC08002506BC /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 4BC03C371780EC08002506BC /* release_notes.md */; };
+		4BC03C3D1780ED7B002506BC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC03C3C1780ED7B002506BC /* libz.dylib */; };
+		4BFAF680171500620029C52C /* category-data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BFAF67F171500620029C52C /* category-data.plist */; };
+		A17E1B2B15BC8F28006B6E3F /* MainScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E1B2915BC8F28006B6E3F /* MainScreenVC.m */; };
+		A17E1B2C15BC8F28006B6E3F /* MainScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17E1B2A15BC8F28006B6E3F /* MainScreenVC.xib */; };
+		A17E1B4015BC9A69006B6E3F /* ViewLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E1B3E15BC9A69006B6E3F /* ViewLog.m */; };
+		A17E1B4115BC9A69006B6E3F /* ViewLog.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17E1B3F15BC9A69006B6E3F /* ViewLog.xib */; };
+		A17E1B5115BC9B50006B6E3F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A17E1B5015BC9B50006B6E3F /* MessageUI.framework */; };
+		A17E1B6915BCD666006B6E3F /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E1B6715BCD666006B6E3F /* CategoryVC.m */; };
+		A17E1B6A15BCD666006B6E3F /* CategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17E1B6815BCD666006B6E3F /* CategoryVC.xib */; };
+		A17E1B7615BCDC1C006B6E3F /* RecallEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E1B7415BCDC1C006B6E3F /* RecallEntryVC.m */; };
+		A17E1B7715BCDC1C006B6E3F /* RecallEntryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17E1B7515BCDC1C006B6E3F /* RecallEntryVC.xib */; };
+		A17E1DDE15C23AF1006B6E3F /* FeedbackScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E1DDC15C23AF1006B6E3F /* FeedbackScreenVC.m */; };
+		A17E1DDF15C23AF1006B6E3F /* FeedbackScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17E1DDD15C23AF1006B6E3F /* FeedbackScreenVC.xib */; };
+		A17E1FB115C5D179006B6E3F /* CategoryControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E1FAF15C5D179006B6E3F /* CategoryControllerVC.m */; };
+		A17E1FB215C5D179006B6E3F /* CategoryControllerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17E1FB015C5D179006B6E3F /* CategoryControllerVC.xib */; };
+		A17E20C315C73E35006B6E3F /* DecisionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E20C115C73E35006B6E3F /* DecisionVC.m */; };
+		A17E20C415C73E35006B6E3F /* DecisionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17E20C215C73E35006B6E3F /* DecisionVC.xib */; };
+		A17E20F815C76B5E006B6E3F /* DecisionControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E20F615C76B5E006B6E3F /* DecisionControllerVC.m */; };
+		A17E20F915C76B5E006B6E3F /* DecisionControllerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17E20F715C76B5E006B6E3F /* DecisionControllerVC.xib */; };
+		A17E21C815CB627B006B6E3F /* SentenceControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E21C615CB627B006B6E3F /* SentenceControllerVC.m */; };
+		A17E21C915CB627B006B6E3F /* SentenceControllerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17E21C715CB627B006B6E3F /* SentenceControllerVC.xib */; };
+		A17E21D015CB64AD006B6E3F /* SentenceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E21CE15CB64AD006B6E3F /* SentenceVC.m */; };
+		A17E21D115CB64AD006B6E3F /* SentenceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17E21CF15CB64AD006B6E3F /* SentenceVC.xib */; };
+		A17E244015E590CD006B6E3F /* AdminScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E243E15E590CD006B6E3F /* AdminScreenVC.m */; };
+		A17E244115E590CD006B6E3F /* AdminScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17E243F15E590CD006B6E3F /* AdminScreenVC.xib */; };
+		A17E24B215E6E1D6006B6E3F /* AlertPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = A17E24B115E6E1D6006B6E3F /* AlertPrompt.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* Memory_TrainingAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory_TrainingAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* Memory_TrainingAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Memory_TrainingAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* iTrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		32CA4F630368D1EE00C91783 /* Memory_Training_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory_Training_Prefix.pch; sourceTree = "<group>"; };
+		4B0D5F0D16C85331000F8651 /* LoggingSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingSingleton.h; sourceTree = "<group>"; };
+		4B0D5F0E16C85331000F8651 /* LoggingSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingSingleton.m; sourceTree = "<group>"; };
+		4B553C88179A746F00E302C0 /* times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = times.txt; path = Resources/categories/times.txt; sourceTree = "<group>"; };
+		4B553C89179A746F00E302C0 /* maleNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = maleNames.txt; path = Resources/categories/maleNames.txt; sourceTree = "<group>"; };
+		4B553C8A179A746F00E302C0 /* fish.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fish.txt; path = Resources/categories/fish.txt; sourceTree = "<group>"; };
+		4B553C8B179A746F00E302C0 /* elements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = elements.txt; path = Resources/categories/elements.txt; sourceTree = "<group>"; };
+		4B553C8F179A746F00E302C0 /* kitchenware.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = kitchenware.txt; path = Resources/categories/kitchenware.txt; sourceTree = "<group>"; };
+		4B553C90179A746F00E302C0 /* liquids.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = liquids.txt; path = Resources/categories/liquids.txt; sourceTree = "<group>"; };
+		4B553C91179A746F00E302C0 /* toys.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = toys.txt; path = Resources/categories/toys.txt; sourceTree = "<group>"; };
+		4B553C92179A746F00E302C0 /* reading.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = reading.txt; path = Resources/categories/reading.txt; sourceTree = "<group>"; };
+		4B553C93179A746F00E302C0 /* femaleNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = femaleNames.txt; path = Resources/categories/femaleNames.txt; sourceTree = "<group>"; };
+		4B553C94179A746F00E302C0 /* green.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = green.txt; path = Resources/categories/green.txt; sourceTree = "<group>"; };
+		4B553C95179A746F00E302C0 /* relatives.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = relatives.txt; path = Resources/categories/relatives.txt; sourceTree = "<group>"; };
+		4B553C96179A746F00E302C0 /* woods.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = woods.txt; path = Resources/categories/woods.txt; sourceTree = "<group>"; };
+		4B553C97179A746F00E302C0 /* weather.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = weather.txt; path = Resources/categories/weather.txt; sourceTree = "<group>"; };
+		4B553C98179A746F00E302C0 /* weapons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = weapons.txt; path = Resources/categories/weapons.txt; sourceTree = "<group>"; };
+		4B553C99179A746F00E302C0 /* vehicles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vehicles.txt; path = Resources/categories/vehicles.txt; sourceTree = "<group>"; };
+		4B553C9A179A746F00E302C0 /* vegetables.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vegetables.txt; path = Resources/categories/vegetables.txt; sourceTree = "<group>"; };
+		4B553C9B179A746F00E302C0 /* universities.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = universities.txt; path = Resources/categories/universities.txt; sourceTree = "<group>"; };
+		4B553C9C179A746F00E302C0 /* trees.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = trees.txt; path = Resources/categories/trees.txt; sourceTree = "<group>"; };
+		4B553C9D179A746F00E302C0 /* tools.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tools.txt; path = Resources/categories/tools.txt; sourceTree = "<group>"; };
+		4B553C9E179A746F00E302C0 /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = states.txt; path = Resources/categories/states.txt; sourceTree = "<group>"; };
+		4B553C9F179A746F00E302C0 /* sports.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sports.txt; path = Resources/categories/sports.txt; sourceTree = "<group>"; };
+		4B553CA0179A746F00E302C0 /* speech.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = speech.txt; path = Resources/categories/speech.txt; sourceTree = "<group>"; };
+		4B553CA1179A746F00E302C0 /* snake.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = snake.txt; path = Resources/categories/snake.txt; sourceTree = "<group>"; };
+		4B553CA2179A746F00E302C0 /* sciences.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sciences.txt; path = Resources/categories/sciences.txt; sourceTree = "<group>"; };
+		4B553CA3179A746F00E302C0 /* religious.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = religious.txt; path = Resources/categories/religious.txt; sourceTree = "<group>"; };
+		4B553CA4179A746F00E302C0 /* politics.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = politics.txt; path = Resources/categories/politics.txt; sourceTree = "<group>"; };
+		4B553CA5179A746F00E302C0 /* occupation.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = occupation.txt; path = Resources/categories/occupation.txt; sourceTree = "<group>"; };
+		4B553CA6179A746F00E302C0 /* noisy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = noisy.txt; path = Resources/categories/noisy.txt; sourceTree = "<group>"; };
+		4B553CA7179A746F00E302C0 /* nature.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = nature.txt; path = Resources/categories/nature.txt; sourceTree = "<group>"; };
+		4B553CA8179A746F00E302C0 /* music.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = music.txt; path = Resources/categories/music.txt; sourceTree = "<group>"; };
+		4B553CA9179A746F00E302C0 /* money.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = money.txt; path = Resources/categories/money.txt; sourceTree = "<group>"; };
+		4B553CAA179A746F00E302C0 /* military.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = military.txt; path = Resources/categories/military.txt; sourceTree = "<group>"; };
+		4B553CAB179A746F00E302C0 /* metals.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = metals.txt; path = Resources/categories/metals.txt; sourceTree = "<group>"; };
+		4B553CAC179A746F00E302C0 /* jewels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = jewels.txt; path = Resources/categories/jewels.txt; sourceTree = "<group>"; };
+		4B553CAD179A746F00E302C0 /* instruments.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = instruments.txt; path = Resources/categories/instruments.txt; sourceTree = "<group>"; };
+		4B553CAE179A746F00E302C0 /* insects.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = insects.txt; path = Resources/categories/insects.txt; sourceTree = "<group>"; };
+		4B553CAF179A746F00E302C0 /* herbs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = herbs.txt; path = Resources/categories/herbs.txt; sourceTree = "<group>"; };
+		4B553CB0179A746F00E302C0 /* gardening.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = gardening.txt; path = Resources/categories/gardening.txt; sourceTree = "<group>"; };
+		4B553CB1179A746F00E302C0 /* furniture.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = furniture.txt; path = Resources/categories/furniture.txt; sourceTree = "<group>"; };
+		4B553CB2179A746F00E302C0 /* fuels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fuels.txt; path = Resources/categories/fuels.txt; sourceTree = "<group>"; };
+		4B553CB3179A746F00E302C0 /* fruit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fruit.txt; path = Resources/categories/fruit.txt; sourceTree = "<group>"; };
+		4B553CB4179A746F00E302C0 /* footwear.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = footwear.txt; path = Resources/categories/footwear.txt; sourceTree = "<group>"; };
+		4B553CB5179A746F00E302C0 /* football.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = football.txt; path = Resources/categories/football.txt; sourceTree = "<group>"; };
+		4B553CB6179A746F00E302C0 /* flowers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = flowers.txt; path = Resources/categories/flowers.txt; sourceTree = "<group>"; };
+		4B553CB7179A746F00E302C0 /* flies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = flies.txt; path = Resources/categories/flies.txt; sourceTree = "<group>"; };
+		4B553CB8179A746F00E302C0 /* fabric.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fabric.txt; path = Resources/categories/fabric.txt; sourceTree = "<group>"; };
+		4B553CB9179A746F00E302C0 /* dwellings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dwellings.txt; path = Resources/categories/dwellings.txt; sourceTree = "<group>"; };
+		4B553CBA179A746F00E302C0 /* drugs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = drugs.txt; path = Resources/categories/drugs.txt; sourceTree = "<group>"; };
+		4B553CBB179A746F00E302C0 /* diseases.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = diseases.txt; path = Resources/categories/diseases.txt; sourceTree = "<group>"; };
+		4B553CBC179A746F00E302C0 /* distances.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = distances.txt; path = Resources/categories/distances.txt; sourceTree = "<group>"; };
+		4B553CF2179A749500E302C0 /* trueSentences.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = trueSentences.txt; path = Resources/trueSentences.txt; sourceTree = "<group>"; };
+		4B553CF3179A749500E302C0 /* falseSentences.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = falseSentences.txt; path = Resources/falseSentences.txt; sourceTree = "<group>"; };
+		4B553CF6179A74E400E302C0 /* sentenceInstructions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sentenceInstructions.txt; path = Resources/sentenceInstructions.txt; sourceTree = "<group>"; };
+		4B553CF7179A74E400E302C0 /* decisionInstructions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = decisionInstructions.txt; path = Resources/decisionInstructions.txt; sourceTree = "<group>"; };
+		4B553CF8179A74E400E302C0 /* categoryInstructions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = categoryInstructions.txt; path = Resources/categoryInstructions.txt; sourceTree = "<group>"; };
+		4B553CFC179A74F400E302C0 /* non-words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "non-words.txt"; path = "Resources/non-words.txt"; sourceTree = "<group>"; };
+		4B553CFD179A74F400E302C0 /* decisionWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = decisionWords.txt; path = Resources/decisionWords.txt; sourceTree = "<group>"; };
+		4B553D00179A74FF00E302C0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Assets/Icon.png; sourceTree = "<group>"; };
+		4B553D02179A790100E302C0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
+		4B553D04179A792400E302C0 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = Classes/MainWindow.xib; sourceTree = "<group>"; };
+		4B88EFCB17545D5300CFE83C /* ProperDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProperDataProtocol.h; sourceTree = "<group>"; };
+		4BC03C351780EC08002506BC /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		4BC03C361780EC08002506BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		4BC03C371780EC08002506BC /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		4BC03C381780EC08002506BC /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		4BC03C3C1780ED7B002506BC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4BFAF67F171500620029C52C /* category-data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "category-data.plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Memory_Training-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Memory_Training-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A17E1B2815BC8F28006B6E3F /* MainScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenVC.h; sourceTree = "<group>"; };
+		A17E1B2915BC8F28006B6E3F /* MainScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenVC.m; sourceTree = "<group>"; };
+		A17E1B2A15BC8F28006B6E3F /* MainScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenVC.xib; sourceTree = "<group>"; };
+		A17E1B3D15BC9A69006B6E3F /* ViewLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewLog.h; sourceTree = "<group>"; };
+		A17E1B3E15BC9A69006B6E3F /* ViewLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewLog.m; sourceTree = "<group>"; };
+		A17E1B3F15BC9A69006B6E3F /* ViewLog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewLog.xib; sourceTree = "<group>"; };
+		A17E1B5015BC9B50006B6E3F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A17E1B6615BCD666006B6E3F /* CategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryVC.h; sourceTree = "<group>"; };
+		A17E1B6715BCD666006B6E3F /* CategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryVC.m; sourceTree = "<group>"; };
+		A17E1B6815BCD666006B6E3F /* CategoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryVC.xib; sourceTree = "<group>"; };
+		A17E1B7315BCDC1C006B6E3F /* RecallEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecallEntryVC.h; sourceTree = "<group>"; };
+		A17E1B7415BCDC1C006B6E3F /* RecallEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecallEntryVC.m; sourceTree = "<group>"; };
+		A17E1B7515BCDC1C006B6E3F /* RecallEntryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecallEntryVC.xib; sourceTree = "<group>"; };
+		A17E1DDB15C23AF1006B6E3F /* FeedbackScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackScreenVC.h; sourceTree = "<group>"; };
+		A17E1DDC15C23AF1006B6E3F /* FeedbackScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackScreenVC.m; sourceTree = "<group>"; };
+		A17E1DDD15C23AF1006B6E3F /* FeedbackScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackScreenVC.xib; sourceTree = "<group>"; };
+		A17E1FAE15C5D179006B6E3F /* CategoryControllerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryControllerVC.h; sourceTree = "<group>"; };
+		A17E1FAF15C5D179006B6E3F /* CategoryControllerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryControllerVC.m; sourceTree = "<group>"; };
+		A17E1FB015C5D179006B6E3F /* CategoryControllerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryControllerVC.xib; sourceTree = "<group>"; };
+		A17E20C015C73E35006B6E3F /* DecisionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecisionVC.h; sourceTree = "<group>"; };
+		A17E20C115C73E35006B6E3F /* DecisionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecisionVC.m; sourceTree = "<group>"; };
+		A17E20C215C73E35006B6E3F /* DecisionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecisionVC.xib; sourceTree = "<group>"; };
+		A17E20F515C76B5E006B6E3F /* DecisionControllerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecisionControllerVC.h; sourceTree = "<group>"; };
+		A17E20F615C76B5E006B6E3F /* DecisionControllerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecisionControllerVC.m; sourceTree = "<group>"; };
+		A17E20F715C76B5E006B6E3F /* DecisionControllerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecisionControllerVC.xib; sourceTree = "<group>"; };
+		A17E21C515CB627B006B6E3F /* SentenceControllerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentenceControllerVC.h; sourceTree = "<group>"; };
+		A17E21C615CB627B006B6E3F /* SentenceControllerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentenceControllerVC.m; sourceTree = "<group>"; };
+		A17E21C715CB627B006B6E3F /* SentenceControllerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SentenceControllerVC.xib; sourceTree = "<group>"; };
+		A17E21CD15CB64AD006B6E3F /* SentenceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentenceVC.h; sourceTree = "<group>"; };
+		A17E21CE15CB64AD006B6E3F /* SentenceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentenceVC.m; sourceTree = "<group>"; };
+		A17E21CF15CB64AD006B6E3F /* SentenceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SentenceVC.xib; sourceTree = "<group>"; };
+		A17E243D15E590CD006B6E3F /* AdminScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminScreenVC.h; sourceTree = "<group>"; };
+		A17E243E15E590CD006B6E3F /* AdminScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminScreenVC.m; sourceTree = "<group>"; };
+		A17E243F15E590CD006B6E3F /* AdminScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminScreenVC.xib; sourceTree = "<group>"; };
+		A17E24B015E6E1D6006B6E3F /* AlertPrompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertPrompt.h; sourceTree = "<group>"; };
+		A17E24B115E6E1D6006B6E3F /* AlertPrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertPrompt.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC03C3D1780ED7B002506BC /* libz.dylib in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				A17E1B5115BC9B50006B6E3F /* MessageUI.framework in Frameworks */,
+				4BC03C391780EC08002506BC /* libTestFlight.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4B88EFCB17545D5300CFE83C /* ProperDataProtocol.h */,
+				4B0D5F0D16C85331000F8651 /* LoggingSingleton.h */,
+				4B0D5F0E16C85331000F8651 /* LoggingSingleton.m */,
+				1D3623240D0F684500981E51 /* Memory_TrainingAppDelegate.h */,
+				1D3623250D0F684500981E51 /* Memory_TrainingAppDelegate.m */,
+				A17E1B3D15BC9A69006B6E3F /* ViewLog.h */,
+				A17E1B3E15BC9A69006B6E3F /* ViewLog.m */,
+				A17E1B3F15BC9A69006B6E3F /* ViewLog.xib */,
+				A17E1B2815BC8F28006B6E3F /* MainScreenVC.h */,
+				A17E1B2915BC8F28006B6E3F /* MainScreenVC.m */,
+				A17E1B2A15BC8F28006B6E3F /* MainScreenVC.xib */,
+				A17E243D15E590CD006B6E3F /* AdminScreenVC.h */,
+				A17E243E15E590CD006B6E3F /* AdminScreenVC.m */,
+				A17E243F15E590CD006B6E3F /* AdminScreenVC.xib */,
+				4B0D5F1116C8CF01000F8651 /* Game ViewControllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* iTrain.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				4BC03C341780EC08002506BC /* TestFlightSDK1.2.6 */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Memory_Training_Prefix.pch */,
+				4B553D02179A790100E302C0 /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B553D00179A74FF00E302C0 /* Icon.png */,
+				4B553D04179A792400E302C0 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Memory_Training-Info.plist */,
+				4BFAF67F171500620029C52C /* category-data.plist */,
+				4B553CF2179A749500E302C0 /* trueSentences.txt */,
+				4B553CF3179A749500E302C0 /* falseSentences.txt */,
+				4B553CFC179A74F400E302C0 /* non-words.txt */,
+				4B553CFD179A74F400E302C0 /* decisionWords.txt */,
+				4B553CF6179A74E400E302C0 /* sentenceInstructions.txt */,
+				4B553CF7179A74E400E302C0 /* decisionInstructions.txt */,
+				4B553CF8179A74E400E302C0 /* categoryInstructions.txt */,
+				4BFAF681171505560029C52C /* categories */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BC03C3C1780ED7B002506BC /* libz.dylib */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				A17E1B5015BC9B50006B6E3F /* MessageUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B0D5F1116C8CF01000F8651 /* Game ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A17E1B7315BCDC1C006B6E3F /* RecallEntryVC.h */,
+				A17E1B7415BCDC1C006B6E3F /* RecallEntryVC.m */,
+				A17E1B7515BCDC1C006B6E3F /* RecallEntryVC.xib */,
+				A17E1DDB15C23AF1006B6E3F /* FeedbackScreenVC.h */,
+				A17E1DDC15C23AF1006B6E3F /* FeedbackScreenVC.m */,
+				A17E1DDD15C23AF1006B6E3F /* FeedbackScreenVC.xib */,
+				A17E1FAE15C5D179006B6E3F /* CategoryControllerVC.h */,
+				A17E1FAF15C5D179006B6E3F /* CategoryControllerVC.m */,
+				A17E1FB015C5D179006B6E3F /* CategoryControllerVC.xib */,
+				A17E1B6615BCD666006B6E3F /* CategoryVC.h */,
+				A17E1B6715BCD666006B6E3F /* CategoryVC.m */,
+				A17E1B6815BCD666006B6E3F /* CategoryVC.xib */,
+				A17E20F515C76B5E006B6E3F /* DecisionControllerVC.h */,
+				A17E20F615C76B5E006B6E3F /* DecisionControllerVC.m */,
+				A17E20F715C76B5E006B6E3F /* DecisionControllerVC.xib */,
+				A17E20C015C73E35006B6E3F /* DecisionVC.h */,
+				A17E20C115C73E35006B6E3F /* DecisionVC.m */,
+				A17E20C215C73E35006B6E3F /* DecisionVC.xib */,
+				A17E21C515CB627B006B6E3F /* SentenceControllerVC.h */,
+				A17E21C615CB627B006B6E3F /* SentenceControllerVC.m */,
+				A17E21C715CB627B006B6E3F /* SentenceControllerVC.xib */,
+				A17E21CD15CB64AD006B6E3F /* SentenceVC.h */,
+				A17E21CE15CB64AD006B6E3F /* SentenceVC.m */,
+				A17E21CF15CB64AD006B6E3F /* SentenceVC.xib */,
+				A17E24B015E6E1D6006B6E3F /* AlertPrompt.h */,
+				A17E24B115E6E1D6006B6E3F /* AlertPrompt.m */,
+			);
+			name = "Game ViewControllers";
+			sourceTree = "<group>";
+		};
+		4BC03C341780EC08002506BC /* TestFlightSDK1.2.6 */ = {
+			isa = PBXGroup;
+			children = (
+				4BC03C351780EC08002506BC /* libTestFlight.a */,
+				4BC03C361780EC08002506BC /* README.md */,
+				4BC03C371780EC08002506BC /* release_notes.md */,
+				4BC03C381780EC08002506BC /* TestFlight.h */,
+			);
+			name = TestFlightSDK1.2.6;
+			path = Classes/TestFlightSDK1.2.6;
+			sourceTree = "<group>";
+		};
+		4BFAF681171505560029C52C /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				4B553C88179A746F00E302C0 /* times.txt */,
+				4B553C89179A746F00E302C0 /* maleNames.txt */,
+				4B553C8A179A746F00E302C0 /* fish.txt */,
+				4B553C8B179A746F00E302C0 /* elements.txt */,
+				4B553C8F179A746F00E302C0 /* kitchenware.txt */,
+				4B553C90179A746F00E302C0 /* liquids.txt */,
+				4B553C91179A746F00E302C0 /* toys.txt */,
+				4B553C92179A746F00E302C0 /* reading.txt */,
+				4B553C93179A746F00E302C0 /* femaleNames.txt */,
+				4B553C94179A746F00E302C0 /* green.txt */,
+				4B553C95179A746F00E302C0 /* relatives.txt */,
+				4B553C96179A746F00E302C0 /* woods.txt */,
+				4B553C97179A746F00E302C0 /* weather.txt */,
+				4B553C98179A746F00E302C0 /* weapons.txt */,
+				4B553C99179A746F00E302C0 /* vehicles.txt */,
+				4B553C9A179A746F00E302C0 /* vegetables.txt */,
+				4B553C9B179A746F00E302C0 /* universities.txt */,
+				4B553C9C179A746F00E302C0 /* trees.txt */,
+				4B553C9D179A746F00E302C0 /* tools.txt */,
+				4B553C9E179A746F00E302C0 /* states.txt */,
+				4B553C9F179A746F00E302C0 /* sports.txt */,
+				4B553CA0179A746F00E302C0 /* speech.txt */,
+				4B553CA1179A746F00E302C0 /* snake.txt */,
+				4B553CA2179A746F00E302C0 /* sciences.txt */,
+				4B553CA3179A746F00E302C0 /* religious.txt */,
+				4B553CA4179A746F00E302C0 /* politics.txt */,
+				4B553CA5179A746F00E302C0 /* occupation.txt */,
+				4B553CA6179A746F00E302C0 /* noisy.txt */,
+				4B553CA7179A746F00E302C0 /* nature.txt */,
+				4B553CA8179A746F00E302C0 /* music.txt */,
+				4B553CA9179A746F00E302C0 /* money.txt */,
+				4B553CAA179A746F00E302C0 /* military.txt */,
+				4B553CAB179A746F00E302C0 /* metals.txt */,
+				4B553CAC179A746F00E302C0 /* jewels.txt */,
+				4B553CAD179A746F00E302C0 /* instruments.txt */,
+				4B553CAE179A746F00E302C0 /* insects.txt */,
+				4B553CAF179A746F00E302C0 /* herbs.txt */,
+				4B553CB0179A746F00E302C0 /* gardening.txt */,
+				4B553CB1179A746F00E302C0 /* furniture.txt */,
+				4B553CB2179A746F00E302C0 /* fuels.txt */,
+				4B553CB3179A746F00E302C0 /* fruit.txt */,
+				4B553CB4179A746F00E302C0 /* footwear.txt */,
+				4B553CB5179A746F00E302C0 /* football.txt */,
+				4B553CB6179A746F00E302C0 /* flowers.txt */,
+				4B553CB7179A746F00E302C0 /* flies.txt */,
+				4B553CB8179A746F00E302C0 /* fabric.txt */,
+				4B553CB9179A746F00E302C0 /* dwellings.txt */,
+				4B553CBA179A746F00E302C0 /* drugs.txt */,
+				4B553CBB179A746F00E302C0 /* diseases.txt */,
+				4B553CBC179A746F00E302C0 /* distances.txt */,
+			);
+			name = categories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Memory Training */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Memory Training" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Memory Training";
+			productName = "Memory Training";
+			productReference = 1D6058910D05DD3D006BFB54 /* iTrain.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Memory Training" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Memory Training */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A17E1B2C15BC8F28006B6E3F /* MainScreenVC.xib in Resources */,
+				A17E1B4115BC9A69006B6E3F /* ViewLog.xib in Resources */,
+				A17E1B6A15BCD666006B6E3F /* CategoryVC.xib in Resources */,
+				A17E1B7715BCDC1C006B6E3F /* RecallEntryVC.xib in Resources */,
+				A17E1DDF15C23AF1006B6E3F /* FeedbackScreenVC.xib in Resources */,
+				A17E1FB215C5D179006B6E3F /* CategoryControllerVC.xib in Resources */,
+				A17E20C415C73E35006B6E3F /* DecisionVC.xib in Resources */,
+				A17E20F915C76B5E006B6E3F /* DecisionControllerVC.xib in Resources */,
+				A17E21C915CB627B006B6E3F /* SentenceControllerVC.xib in Resources */,
+				A17E21D115CB64AD006B6E3F /* SentenceVC.xib in Resources */,
+				A17E244115E590CD006B6E3F /* AdminScreenVC.xib in Resources */,
+				4BFAF680171500620029C52C /* category-data.plist in Resources */,
+				4BC03C3A1780EC08002506BC /* README.md in Resources */,
+				4BC03C3B1780EC08002506BC /* release_notes.md in Resources */,
+				4B553CBD179A746F00E302C0 /* times.txt in Resources */,
+				4B553CBE179A746F00E302C0 /* maleNames.txt in Resources */,
+				4B553CBF179A746F00E302C0 /* fish.txt in Resources */,
+				4B553CC0179A746F00E302C0 /* elements.txt in Resources */,
+				4B553CC4179A746F00E302C0 /* kitchenware.txt in Resources */,
+				4B553CC5179A746F00E302C0 /* liquids.txt in Resources */,
+				4B553CC6179A746F00E302C0 /* toys.txt in Resources */,
+				4B553CC7179A746F00E302C0 /* reading.txt in Resources */,
+				4B553CC8179A746F00E302C0 /* femaleNames.txt in Resources */,
+				4B553CC9179A746F00E302C0 /* green.txt in Resources */,
+				4B553CCA179A746F00E302C0 /* relatives.txt in Resources */,
+				4B553CCB179A746F00E302C0 /* woods.txt in Resources */,
+				4B553CCC179A746F00E302C0 /* weather.txt in Resources */,
+				4B553CCD179A746F00E302C0 /* weapons.txt in Resources */,
+				4B553CCE179A746F00E302C0 /* vehicles.txt in Resources */,
+				4B553CCF179A746F00E302C0 /* vegetables.txt in Resources */,
+				4B553CD0179A746F00E302C0 /* universities.txt in Resources */,
+				4B553CD1179A746F00E302C0 /* trees.txt in Resources */,
+				4B553CD2179A746F00E302C0 /* tools.txt in Resources */,
+				4B553CD3179A746F00E302C0 /* states.txt in Resources */,
+				4B553CD4179A746F00E302C0 /* sports.txt in Resources */,
+				4B553CD5179A746F00E302C0 /* speech.txt in Resources */,
+				4B553CD6179A746F00E302C0 /* snake.txt in Resources */,
+				4B553CD7179A746F00E302C0 /* sciences.txt in Resources */,
+				4B553CD8179A746F00E302C0 /* religious.txt in Resources */,
+				4B553CD9179A746F00E302C0 /* politics.txt in Resources */,
+				4B553CDA179A746F00E302C0 /* occupation.txt in Resources */,
+				4B553CDB179A746F00E302C0 /* noisy.txt in Resources */,
+				4B553CDC179A746F00E302C0 /* nature.txt in Resources */,
+				4B553CDD179A746F00E302C0 /* music.txt in Resources */,
+				4B553CDE179A746F00E302C0 /* money.txt in Resources */,
+				4B553CDF179A746F00E302C0 /* military.txt in Resources */,
+				4B553CE0179A746F00E302C0 /* metals.txt in Resources */,
+				4B553CE1179A746F00E302C0 /* jewels.txt in Resources */,
+				4B553CE2179A746F00E302C0 /* instruments.txt in Resources */,
+				4B553CE3179A746F00E302C0 /* insects.txt in Resources */,
+				4B553CE4179A746F00E302C0 /* herbs.txt in Resources */,
+				4B553CE5179A746F00E302C0 /* gardening.txt in Resources */,
+				4B553CE6179A746F00E302C0 /* furniture.txt in Resources */,
+				4B553CE7179A746F00E302C0 /* fuels.txt in Resources */,
+				4B553CE8179A746F00E302C0 /* fruit.txt in Resources */,
+				4B553CE9179A746F00E302C0 /* footwear.txt in Resources */,
+				4B553CEA179A746F00E302C0 /* football.txt in Resources */,
+				4B553CEB179A746F00E302C0 /* flowers.txt in Resources */,
+				4B553CEC179A746F00E302C0 /* flies.txt in Resources */,
+				4B553CED179A746F00E302C0 /* fabric.txt in Resources */,
+				4B553CEE179A746F00E302C0 /* dwellings.txt in Resources */,
+				4B553CEF179A746F00E302C0 /* drugs.txt in Resources */,
+				4B553CF0179A746F00E302C0 /* diseases.txt in Resources */,
+				4B553CF1179A746F00E302C0 /* distances.txt in Resources */,
+				4B553CF4179A749500E302C0 /* trueSentences.txt in Resources */,
+				4B553CF5179A749500E302C0 /* falseSentences.txt in Resources */,
+				4B553CF9179A74E400E302C0 /* sentenceInstructions.txt in Resources */,
+				4B553CFA179A74E400E302C0 /* decisionInstructions.txt in Resources */,
+				4B553CFB179A74E400E302C0 /* categoryInstructions.txt in Resources */,
+				4B553CFE179A74F400E302C0 /* non-words.txt in Resources */,
+				4B553CFF179A74F400E302C0 /* decisionWords.txt in Resources */,
+				4B553D01179A74FF00E302C0 /* Icon.png in Resources */,
+				4B553D05179A792400E302C0 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D3623260D0F684500981E51 /* Memory_TrainingAppDelegate.m in Sources */,
+				A17E1B2B15BC8F28006B6E3F /* MainScreenVC.m in Sources */,
+				A17E1B4015BC9A69006B6E3F /* ViewLog.m in Sources */,
+				A17E1B6915BCD666006B6E3F /* CategoryVC.m in Sources */,
+				A17E1B7615BCDC1C006B6E3F /* RecallEntryVC.m in Sources */,
+				A17E1DDE15C23AF1006B6E3F /* FeedbackScreenVC.m in Sources */,
+				A17E1FB115C5D179006B6E3F /* CategoryControllerVC.m in Sources */,
+				A17E20C315C73E35006B6E3F /* DecisionVC.m in Sources */,
+				A17E20F815C76B5E006B6E3F /* DecisionControllerVC.m in Sources */,
+				A17E21C815CB627B006B6E3F /* SentenceControllerVC.m in Sources */,
+				A17E21D015CB64AD006B6E3F /* SentenceVC.m in Sources */,
+				A17E244015E590CD006B6E3F /* AdminScreenVC.m in Sources */,
+				A17E24B215E6E1D6006B6E3F /* AlertPrompt.m in Sources */,
+				4B0D5F0F16C85331000F8651 /* LoggingSingleton.m in Sources */,
+				4B553D03179A790100E302C0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Memory_Training_Prefix.pch;
+				INFOPLIST_FILE = "Memory_Training-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/TestFlightSDK1.2.6\"",
+				);
+				PRODUCT_NAME = iTrain;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Memory_Training_Prefix.pch;
+				INFOPLIST_FILE = "Memory_Training-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/TestFlightSDK1.2.6\"",
+				);
+				PRODUCT_NAME = iTrain;
+				PROVISIONING_PROFILE = "";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Memory Training" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Memory Training" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

@@ -1,0 +1,5 @@
+In this game, a series of single words (e.g., seek) and non-words (e.g., ceek) will appear on the screen one at a time. They will be presented in sets of two or more. You will be doing two things:
+
+1. First, you will decide if the string of letters forms a word or not, by pressing YES (on the left hand side of the screen) if the string of letters does form a word and NO (on the right hand side of the screen) if the string of letters does not form a word. Be sure to read each word and make your judgement quickly. 
+
+2. After you make your decision, you will see a single letter displayed on the screen before the next word comes up. Your job is to remember these letters. After the final word of that set, you will be asked to type out each of the letters in order. Please do your best to recall the letters in the order that you saw them. As you progress through the game, the number of word-letter pairs per set may increase.
