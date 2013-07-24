@@ -11,6 +11,10 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		4217033A179F75F3003E9A65 /* ControlGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42170338179F75F3003E9A65 /* ControlGroupViewController.m */; };
+		4217033B179F75F3003E9A65 /* ControlGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42170339179F75F3003E9A65 /* ControlGroupViewController.xib */; };
+		4217033E179FB08F003E9A65 /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 4217033C179FB08F003E9A65 /* no.png */; };
+		4217033F179FB08F003E9A65 /* yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 4217033D179FB08F003E9A65 /* yes.png */; };
 		4B0D5F0F16C85331000F8651 /* LoggingSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0D5F0E16C85331000F8651 /* LoggingSingleton.m */; };
 		4B553CBD179A746F00E302C0 /* times.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C88179A746F00E302C0 /* times.txt */; };
 		4B553CBE179A746F00E302C0 /* maleNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B553C89179A746F00E302C0 /* maleNames.txt */; };
@@ -111,6 +115,11 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Memory_Training_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory_Training_Prefix.pch; sourceTree = "<group>"; };
+		42170337179F75F3003E9A65 /* ControlGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlGroupViewController.h; sourceTree = "<group>"; };
+		42170338179F75F3003E9A65 /* ControlGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlGroupViewController.m; sourceTree = "<group>"; };
+		42170339179F75F3003E9A65 /* ControlGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlGroupViewController.xib; sourceTree = "<group>"; };
+		4217033C179FB08F003E9A65 /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no.png; path = Resources/Assets/no.png; sourceTree = "<group>"; };
+		4217033D179FB08F003E9A65 /* yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yes.png; path = Resources/Assets/yes.png; sourceTree = "<group>"; };
 		4B0D5F0D16C85331000F8651 /* LoggingSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingSingleton.h; sourceTree = "<group>"; };
 		4B0D5F0E16C85331000F8651 /* LoggingSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingSingleton.m; sourceTree = "<group>"; };
 		4B553C88179A746F00E302C0 /* times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = times.txt; path = Resources/categories/times.txt; sourceTree = "<group>"; };
@@ -301,6 +310,8 @@
 				4B553CFD179A74F400E302C0 /* decisionWords.txt */,
 				4B553CF6179A74E400E302C0 /* sentenceInstructions.txt */,
 				4B553CF7179A74E400E302C0 /* decisionInstructions.txt */,
+				4217033C179FB08F003E9A65 /* no.png */,
+				4217033D179FB08F003E9A65 /* yes.png */,
 				4B553CF8179A74E400E302C0 /* categoryInstructions.txt */,
 				4BFAF681171505560029C52C /* categories */,
 			);
@@ -322,6 +333,9 @@
 		4B0D5F1116C8CF01000F8651 /* Game ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				42170337179F75F3003E9A65 /* ControlGroupViewController.h */,
+				42170338179F75F3003E9A65 /* ControlGroupViewController.m */,
+				42170339179F75F3003E9A65 /* ControlGroupViewController.xib */,
 				A17E1B7315BCDC1C006B6E3F /* RecallEntryVC.h */,
 				A17E1B7415BCDC1C006B6E3F /* RecallEntryVC.m */,
 				A17E1B7515BCDC1C006B6E3F /* RecallEntryVC.xib */,
@@ -546,6 +560,9 @@
 				4B553CFF179A74F400E302C0 /* decisionWords.txt in Resources */,
 				4B553D01179A74FF00E302C0 /* Icon.png in Resources */,
 				4B553D05179A792400E302C0 /* MainWindow.xib in Resources */,
+				4217033B179F75F3003E9A65 /* ControlGroupViewController.xib in Resources */,
+				4217033E179FB08F003E9A65 /* no.png in Resources */,
+				4217033F179FB08F003E9A65 /* yes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +588,7 @@
 				A17E24B215E6E1D6006B6E3F /* AlertPrompt.m in Sources */,
 				4B0D5F0F16C85331000F8651 /* LoggingSingleton.m in Sources */,
 				4B553D03179A790100E302C0 /* main.m in Sources */,
+				4217033A179F75F3003E9A65 /* ControlGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

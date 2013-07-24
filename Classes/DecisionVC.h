@@ -63,7 +63,6 @@
 
 - (void)logIt:(NSString *)whatToLog;		
 + (int)chooseUnusedWord:(bool)isWord withWordCap:(NSInteger)wordCap andNotWordCap:(NSInteger)notWordCap;
-
 @property (retain) id delegate;				//---comm
 
 @end

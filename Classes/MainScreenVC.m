@@ -164,7 +164,12 @@
 }
 
 - (void)launchCategoryGame {
-	
+	ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
+    
+    [self presentViewController:vc animated:YES completion:^{
+        [vc startTask:category];
+    }];
+    return;
     [self logIt:@"----- CATEGORY game launched"];
     
     

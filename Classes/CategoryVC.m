@@ -139,7 +139,6 @@
 	wordsArray = [[NSMutableArray alloc] init];
 	
 	for (int i=0; i<numWords; i++) {
-		
 		//first, pick if the word is going to be in the category or not by a random binary choice
 		NSInteger categoryDecider = arc4random()%2;
 		[inCategoryTrack addObject:[NSNumber numberWithInt:categoryDecider]];

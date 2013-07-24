@@ -11,6 +11,7 @@
 #import "CategoryControllerVC.h"
 #import "DecisionControllerVC.h"
 #import "SentenceControllerVC.h"
+#import "ControlGroupViewController.h"
 #import "AdminScreenVC.h"
 #import "AlertPrompt.h"
 #import "ProperDataProtocol.h"
