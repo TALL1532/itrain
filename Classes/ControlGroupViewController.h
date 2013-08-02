@@ -14,8 +14,9 @@
 #import "CategoryControllerVC.h"
 #import "DecisionVC.h"
 #import "SentenceVC.h"
+#import "AdminScreenVC.h"
 
-@interface ControlGroupViewController : UIViewController {
+@interface ControlGroupViewController : UIViewController <UIAlertViewDelegate> {
     NSMutableArray* _inCategroyTrack;
     NSMutableArray* _wordTrack;
     NSInteger _numWords;
@@ -31,6 +32,9 @@
     
     BOOL _hasPressedButton;
     
+    NSTimeInterval _timeForTask;
+    NSDate * _startTime;
+    
     IBOutlet UIView* countDown;
     IBOutlet UILabel* content;
     IBOutlet UILabel* categoryLabel;
@@ -39,7 +43,7 @@
     IBOutlet UIImageView* wrong;
     IBOutlet UIImageView* right;
 }
--(void)startTask:(NSString*)task;
+- (void)startTask:(NSString*)task;
 - (IBAction)yesPressed:(id)sender;
 - (IBAction)noPressed:(id)sender;
 +(NSMutableArray*)shuffle:(NSMutableArray*)array;

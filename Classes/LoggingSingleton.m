@@ -96,9 +96,9 @@
     return toReturn;
 }
 + (NSString*)getSubjectName{
-    NSString* toReturn = [[NSUserDefaults standardUserDefaults] stringForKey:@"k_subjectName"];
+    NSString* toReturn = [[NSUserDefaults standardUserDefaults] stringForKey:SUBJECT_NAME];
     if(toReturn == nil){
-        [[NSUserDefaults standardUserDefaults] setObject:@"default_subject" forKey:@"k_subjectName"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"default_subject" forKey:SUBJECT_NAME];
         toReturn = @"default_subject";
     }
     return toReturn;

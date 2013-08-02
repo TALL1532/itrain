@@ -79,13 +79,13 @@
 	NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:filePath];  //telling fileHandle what file write to
 	[fileHandle truncateFileAtOffset:[fileHandle seekToEndOfFile]]; //setting aFileHandle to write at the end of the file
 	
-    // category: k_categoryPresentationTime, decision word: k_decisionWordTime, decision letter: k_decisionLetterTime, sentence: k_sentencePresentationTime
-    [[NSUserDefaults standardUserDefaults] setObject:tagField.text forKey:@"k_subjectName"];
-    [[NSUserDefaults standardUserDefaults] setInteger:[categoryTime.text integerValue] forKey:@"k_categoryPresentationTime"];
-    [[NSUserDefaults standardUserDefaults] setInteger:[decisionWordTime.text integerValue] forKey:@"k_decisionWordTime"];
-    [[NSUserDefaults standardUserDefaults] setInteger:[decisionLetterTime.text integerValue] forKey:@"k_decisionLetterTime"];
-    [[NSUserDefaults standardUserDefaults] setInteger:[sentenceTime.text integerValue] forKey:@"k_sentencePresentationTime"];
-    
+    // category: k_categoryPresentationTime, decision word: k_decisionWordTime, decision letter: k_decisionLetterTime, sentence: k_sentencePresentationTimes    
+    [[NSUserDefaults standardUserDefaults] setObject:tagField.text forKey:SUBJECT_NAME];
+    [[NSUserDefaults standardUserDefaults] setInteger:[categoryTime.text integerValue] forKey:CATEGORY_PRESENTATION_TIME];
+    [[NSUserDefaults standardUserDefaults] setInteger:[decisionWordTime.text integerValue] forKey:DECISION_PRESENTATION_TIME];
+    [[NSUserDefaults standardUserDefaults] setInteger:[decisionLetterTime.text integerValue] forKey:DECISION_PRESENTATION_LETTER_TIME];
+    [[NSUserDefaults standardUserDefaults] setInteger:[sentenceTime.text integerValue] forKey:SENTENCE_PRESENTATION_TIME];
+    [[NSUserDefaults standardUserDefaults] setInteger:[timeField.text floatValue] forKey:TASK_TIME];
     
     
 	//WHY... WHY!!!?!?!? note to self: try not to think about how the rest of the code is written
@@ -155,12 +155,13 @@
 	
     [mainMenuButtonsVisibleSwitch setOn:[AdminScreenVC shouldShowMainMenuItems]];
     
-    tagField.text = [NSString stringWithFormat:@"%@",[LoggingSingleton getSubjectName]];
+    tagField.text = [NSString stringWithFormat:@"%@", [LoggingSingleton getSubjectName]];
     
-    categoryTime.text =[NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:@"k_categoryPresentationTime"]];
-    decisionWordTime.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:@"k_decisionWordTime"]];
-    decisionLetterTime.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:@"k_decisionLetterTime"]];
-    sentenceTime.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:@"k_sentencePresentationTime"]];
+    categoryTime.text =[NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:CATEGORY_PRESENTATION_TIME]];
+    decisionWordTime.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:DECISION_PRESENTATION_TIME]];
+    decisionLetterTime.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:DECISION_PRESENTATION_LETTER_TIME]];
+    sentenceTime.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:SENTENCE_PRESENTATION_TIME]];
+    timeField.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:TASK_TIME]];
     
 	if(![fileManager fileExistsAtPath:filePath]) {
 		//file isnt there, do nothing
@@ -179,7 +180,7 @@
 		
 		//load the variables into their respective fields
 		//updated to use NSUSerDefaults. see above    tagField.text = [variableArray objectAtIndex:1];
-        timeField.text = [variableArray objectAtIndex:2];			//NSLog(@"time: %@",timeField.text);
+        //timeField.text = [variableArray objectAtIndex:2];			//NSLog(@"time: %@",timeField.text);
 		minWordsField.text = [variableArray objectAtIndex:3];		//NSLog(@"minWords: %@",minWordsField.text);
 		maxWordsField.text = [variableArray objectAtIndex:4];		//NSLog(@"maxWords: %@",maxWordsField.text);
 		daysField.text = [variableArray objectAtIndex:5];			//NSLog(@"days: %@",daysField.text);

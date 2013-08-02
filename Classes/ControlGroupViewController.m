@@ -9,8 +9,8 @@
 #import "ControlGroupViewController.h"
 
 @interface ControlGroupViewController ()
-
 @end
+
 
 @implementation ControlGroupViewController
 -(NSMutableArray*)generateContentFor:(NSString*)task{
@@ -82,26 +82,44 @@
 -(void)startTask:(NSString*)task{
     _numWords = 20;
     _currentTask = task;
-    _currentWord = 0;
     categoryLabel.text = @"";
-    _hasPressedButton = NO;
-    [_speedRecords release];
-    _speedRecords = nil;
-    _speedRecords = [[NSMutableArray alloc] init];
-    [self showButtons];
-    _wordTrack = [self generateContentFor:task];
+
+
+    _timeForTask = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:TASK_TIME] floatValue] * 60;
+    _startTime = [[NSDate date] retain];
     
-    if([task isEqualToString:category]){
-        _timePerWord = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:@"k_categoryPresentationTime"] floatValue];
-    }
-    else if([task isEqualToString:decision]){
-        _timePerWord = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:@"k_decisionWordTime"] floatValue];
-    }
-    else if([task isEqualToString:sentence]){
-        _timePerWord = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:@"k_sentencePresentationTime"] floatValue];
-    }
+    [self nextRound];
+}
+- (void)nextRound {
     
-    [self nextWord];
+    if( [[_startTime dateByAddingTimeInterval:_timeForTask] timeIntervalSinceNow] < 0){
+        UIAlertView* done = [[UIAlertView alloc] initWithTitle:@"Task Complete!" message:@"press okay to continue"
+                                                     delegate:nil
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+        [done show];
+        [done release];
+    }
+    else{
+        _currentWord = 0;
+        _hasPressedButton = NO;
+        [_speedRecords release];
+        _speedRecords = nil;
+        _speedRecords = [[NSMutableArray alloc] init];
+        [self showButtons];
+        _wordTrack = [self generateContentFor:_currentTask];
+        
+        if([_currentTask isEqualToString:category]){
+            _timePerWord = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:@"k_categoryPresentationTime"] floatValue];
+        }
+        else if([_currentTask isEqualToString:decision]){
+            _timePerWord = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:@"k_decisionWordTime"] floatValue];
+        }
+        else if([_currentTask isEqualToString:sentence]){
+            _timePerWord = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:@"k_sentencePresentationTime"] floatValue];
+        }
+        [self nextWord];
+    }
 }
 -(void)nextWord{
     [self showButtons];
@@ -137,7 +155,7 @@
     ave = ave / [_speedRecords count];
     NSString* messege = [NSString stringWithFormat:@"You averaged %f seconds for each question answered.\n You got %d / 20 correct",ave,_totalCorrect];
     UIAlertView *saveAlert = [[UIAlertView alloc] initWithTitle:@"Round Complete" message:messege
-													   delegate:nil
+													   delegate:self
 											  cancelButtonTitle:@"OK"
 											  otherButtonTitles:nil];
 	
@@ -189,6 +207,12 @@
 
 - (IBAction)yesPressed:(id)sender{[self buttonPressed:YES];}
 - (IBAction)noPressed:(id)sender{[self buttonPressed:NO];}
+
+
+//ALERT View Delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    [self nextRound];
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

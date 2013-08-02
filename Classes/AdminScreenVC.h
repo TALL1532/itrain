@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewLog.h"
+#import "SettingsManager.h"
+
+#define SUBJECT_NAME @"k_subjectName"
+#define CATEGORY_PRESENTATION_TIME @"k_categoryPresentationTime"
+#define DECISION_PRESENTATION_TIME @"k_decisionWordTime"
+#define DECISION_PRESENTATION_LETTER_TIME @"k_decisionLetterTime"
+#define SENTENCE_PRESENTATION_TIME @"k_sentencePresentationTime"
+#define TASK_TIME @"k_TaskTime"
+
+
+
+
 
 @protocol ProcessDataDelegate10 <NSObject>	//---comm
 - (void)logIt:(NSString *)whatToLog;		//---comm
