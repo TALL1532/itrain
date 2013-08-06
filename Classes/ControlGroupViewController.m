@@ -53,7 +53,6 @@
         NSMutableArray* wordsArray = [[NSMutableArray alloc] init];
         
         for (int i=0; i<_numWords; i++) {
-            //first, pick if the word is going to be in the category or not by a random binary choice
             BOOL categoryDecider = [(NSNumber*)[_inCategroyTrack objectAtIndex:i] boolValue];
             NSString *wordToAdd;
             do{
@@ -69,10 +68,75 @@
         return wordsArray;
     }
     else if([task isEqualToString:decision]){
+        NSString *realWordsPath = [[NSBundle mainBundle] pathForResource:@"decisionWords" ofType:@"txt"];
+        NSString *realWordsList = [NSString stringWithContentsOfFile:realWordsPath
+                                                            encoding:NSUTF8StringEncoding
+                                                               error:nil];
         
+        //NSString *realWordsTrimmed = [realWordsList stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSArray *realWordsArray = [realWordsList componentsSeparatedByCharactersInSet:
+                                   [NSCharacterSet newlineCharacterSet]];
+        
+        NSString *nonWordsPath = [[NSBundle mainBundle] pathForResource:@"non-words" ofType:@"txt"];
+        NSString *nonWordsList = [NSString stringWithContentsOfFile:nonWordsPath
+                                                           encoding:NSUTF8StringEncoding
+                                                              error:nil];
+        
+        //NSString *nonWordsTrimmed = [nonWordsList stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSArray *nonWordsArray = [nonWordsList componentsSeparatedByCharactersInSet:
+                                  [NSCharacterSet newlineCharacterSet]];
+        
+        
+        NSMutableArray* wordsArray = [[NSMutableArray alloc] init];
+        
+        for (int i=0; i<_numWords; i++) {
+            BOOL isWord = [(NSNumber*)[_inCategroyTrack objectAtIndex:i] boolValue];
+            NSString *wordToAdd;
+            do{
+                if(isWord){
+                    NSInteger asdf = [DecisionVC chooseUnusedWord:YES withWordCap:[realWordsArray count] andNotWordCap:[nonWordsArray count]];
+                    wordToAdd = [realWordsArray objectAtIndex:asdf];
+                }
+                else{
+                    NSInteger asdf = [DecisionVC chooseUnusedWord:NO withWordCap:[realWordsArray count] andNotWordCap:[nonWordsArray count]];
+                    wordToAdd = [nonWordsArray objectAtIndex:asdf];
+                }
+            }while ([wordsArray indexOfObject:wordToAdd] != NSNotFound);
+            [wordsArray addObject:wordToAdd];
+        }
+        return wordsArray;
     }
     else if([task isEqualToString:sentence]){
+        NSString *truePath = [[NSBundle mainBundle] pathForResource:@"trueSentences" ofType:@"txt"];
+        NSString *falsePath = [[NSBundle mainBundle] pathForResource:@"falseSentences" ofType:@"txt"];
         
+        NSString *trueList = [NSString stringWithContentsOfFile:truePath
+                                                       encoding:NSUTF8StringEncoding
+                                                          error:nil];
+        NSString *falseList = [NSString stringWithContentsOfFile:falsePath
+                                                        encoding:NSUTF8StringEncoding
+                                                           error:nil];
+        NSArray *trueArray = [trueList componentsSeparatedByCharactersInSet:
+                              [NSCharacterSet newlineCharacterSet]];
+        NSArray *falseArray = [falseList componentsSeparatedByCharactersInSet:
+                               [NSCharacterSet newlineCharacterSet]];
+        
+        NSMutableArray* sentanceArray = [[NSMutableArray alloc] init];
+        
+        for (int i=0; i<_numWords; i++) {
+            BOOL makesSense = [(NSNumber*)[_inCategroyTrack objectAtIndex:i] boolValue];
+            NSString *sentenceToAdd;
+            do{
+                if(makesSense){
+                    sentenceToAdd = [trueArray objectAtIndex:[SentenceVC chooseUnusedSentence:YES withRealSentenceCap:[trueArray count] andFakeSentenceCap:[falseArray count]]];
+                }
+                else{
+                    sentenceToAdd = [falseArray objectAtIndex:[SentenceVC chooseUnusedSentence:NO withRealSentenceCap:[trueArray count] andFakeSentenceCap:[falseArray count]]];
+                }
+            }while ([sentanceArray indexOfObject:sentenceToAdd] != NSNotFound);
+            [sentanceArray addObject:sentenceToAdd];
+        }
+        return sentanceArray;
     }
     else{
         [NSException raise:NSInvalidArgumentException format:@"task must be one of the three"];

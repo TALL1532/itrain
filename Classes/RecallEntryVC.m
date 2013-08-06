@@ -25,8 +25,6 @@
 		//get the value of each text field
 		field = [textFieldArray objectAtIndex:i];
 		
-		
-		
 		//compare that value to the correct answer
 		enteredWord = [field.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 		//NSLog(@"entrylength: %d",enteredWord.length);
@@ -42,9 +40,7 @@
 			}
 
 		}
-	}
-   
-    
+	}    
 	[self.navigationController popViewControllerAnimated:NO];
 	[[self delegate] recallEnded:rightAnswers withTotalWords:textFieldArray.count];
 }

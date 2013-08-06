@@ -186,6 +186,12 @@
 }
 
 - (void)launchDecisionGame {
+    ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
+    
+    [self presentViewController:vc animated:YES completion:^{
+        [vc startTask:decision];
+    }];
+    return;
 	[self logIt:@"----- DECISION game launched"];
 	
 	dcvc = [[DecisionControllerVC alloc] initWithNibName:@"DecisionControllerVC" bundle:nil];
@@ -200,6 +206,13 @@
 }
 
 - (void)launchSentencesGame; {
+    ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
+    
+    [self presentViewController:vc animated:YES completion:^{
+        [vc startTask:sentence];
+    }];
+    return;
+    
 	[self logIt:@"----- SENTENCES game launched"];
 	
 	scvc = [[SentenceControllerVC alloc] initWithNibName:@"SentenceControllerVC" bundle:nil];
