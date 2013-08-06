@@ -13,6 +13,7 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		4209ACC817B0B31900FF4406 /* ControlFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209ACC617B0B31800FF4406 /* ControlFeedbackViewController.m */; };
 		4209ACC917B0B31900FF4406 /* ControlFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4209ACC717B0B31900FF4406 /* ControlFeedbackViewController.xib */; };
+		4209ACCE17B0DEEE00FF4406 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4209ACCD17B0DEEE00FF4406 /* defaults.plist */; };
 		4211AC7517AC3AC300E2B78B /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4211AC7417AC3AAA00E2B78B /* SettingsManager.m */; };
 		4217033A179F75F3003E9A65 /* ControlGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42170338179F75F3003E9A65 /* ControlGroupViewController.m */; };
 		4217033B179F75F3003E9A65 /* ControlGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42170339179F75F3003E9A65 /* ControlGroupViewController.xib */; };
@@ -122,6 +123,7 @@
 		4209ACC617B0B31800FF4406 /* ControlFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlFeedbackViewController.m; sourceTree = "<group>"; };
 		4209ACC717B0B31900FF4406 /* ControlFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlFeedbackViewController.xib; sourceTree = "<group>"; };
 		4209ACCA17B0C22100FF4406 /* FeedbackDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackDelegate.h; sourceTree = "<group>"; };
+		4209ACCD17B0DEEE00FF4406 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
 		4211AC7317AC3AAA00E2B78B /* SettingsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
 		4211AC7417AC3AAA00E2B78B /* SettingsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
 		42170337179F75F3003E9A65 /* ControlGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlGroupViewController.h; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4209ACCD17B0DEEE00FF4406 /* defaults.plist */,
 				4B553D00179A74FF00E302C0 /* Icon.png */,
 				4B553D04179A792400E302C0 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Memory_Training-Info.plist */,
@@ -579,6 +582,7 @@
 				4217033E179FB08F003E9A65 /* no.png in Resources */,
 				4217033F179FB08F003E9A65 /* yes.png in Resources */,
 				4209ACC917B0B31900FF4406 /* ControlFeedbackViewController.xib in Resources */,
+				4209ACCE17B0DEEE00FF4406 /* defaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

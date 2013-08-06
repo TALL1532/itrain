@@ -144,7 +144,7 @@
     return nil;
 }
 -(void)startTask:(NSString*)task{
-    _numWords = 5;
+    _numWords = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_WORDS_INT];
     _currentTask = task;
     categoryLabel.text = @"";
 

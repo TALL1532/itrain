@@ -164,65 +164,73 @@
 }
 
 - (void)launchCategoryGame {
-	ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:CONTROL_GROUP_ON_BOOL]){
+        ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
+        
+        [self presentViewController:vc animated:YES completion:^{
+            [vc startTask:category];
+        }];
+    }
+    else{
+        [self logIt:@"----- CATEGORY game launched"];
+        
+        
+        
+        ccvc = [[CategoryControllerVC alloc] initWithNibName:@"CategoryControllerVC" bundle:nil];
+        [ccvc setDelegate:self];									//---comm
+        
+        //push control to CategoryControllerVC
+        NSLog(@"MainScreenVC: push VC to CategoryControllerVC");
+        [self.navigationController pushViewController:ccvc animated:NO];
+        
+        [ccvc release];
+    }
     
-    [self presentViewController:vc animated:YES completion:^{
-        [vc startTask:category];
-    }];
-    return;
-    [self logIt:@"----- CATEGORY game launched"];
-    
-    
-
-    ccvc = [[CategoryControllerVC alloc] initWithNibName:@"CategoryControllerVC" bundle:nil];
-    [ccvc setDelegate:self];									//---comm
-
-    //push control to CategoryControllerVC
-    NSLog(@"MainScreenVC: push VC to CategoryControllerVC");
-    [self.navigationController pushViewController:ccvc animated:NO];
-    
-    [ccvc release];
 
 }
 
 - (void)launchDecisionGame {
-    ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
-    
-    [self presentViewController:vc animated:YES completion:^{
-        [vc startTask:decision];
-    }];
-    return;
-	[self logIt:@"----- DECISION game launched"];
-	
-	dcvc = [[DecisionControllerVC alloc] initWithNibName:@"DecisionControllerVC" bundle:nil];
-	[dcvc setDelegate:self];									//---comm
-	
-	//push control to CategoryControllerVC
-	NSLog(@"MainScreenVC: push VC to DecisionControllerVC");
-	[self.navigationController pushViewController:dcvc animated:NO];
-    
-    [dcvc release];
-	
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:CONTROL_GROUP_ON_BOOL]){
+        ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
+        
+        [self presentViewController:vc animated:YES completion:^{
+            [vc startTask:decision];
+        }];
+    }
+    else{
+        [self logIt:@"----- DECISION game launched"];
+        
+        dcvc = [[DecisionControllerVC alloc] initWithNibName:@"DecisionControllerVC" bundle:nil];
+        [dcvc setDelegate:self];									//---comm
+        
+        //push control to CategoryControllerVC
+        NSLog(@"MainScreenVC: push VC to DecisionControllerVC");
+        [self.navigationController pushViewController:dcvc animated:NO];
+        
+        [dcvc release];
+    }
 }
 
 - (void)launchSentencesGame; {
-    ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
-    
-    [self presentViewController:vc animated:YES completion:^{
-        [vc startTask:sentence];
-    }];
-    return;
-    
-	[self logIt:@"----- SENTENCES game launched"];
-	
-	scvc = [[SentenceControllerVC alloc] initWithNibName:@"SentenceControllerVC" bundle:nil];
-	[scvc setDelegate:self];									//---comm
-	
-	//push control to CategoryControllerVC
-	NSLog(@"MainScreenVC: push VC to SentenceControllerVC");
-	[self.navigationController pushViewController:scvc animated:NO];
-    
-    [scvc release];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:CONTROL_GROUP_ON_BOOL]){
+        ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
+        
+        [self presentViewController:vc animated:YES completion:^{
+            [vc startTask:sentence];
+        }];
+    }
+    else{
+        [self logIt:@"----- SENTENCES game launched"];
+        
+        scvc = [[SentenceControllerVC alloc] initWithNibName:@"SentenceControllerVC" bundle:nil];
+        [scvc setDelegate:self];									//---comm
+        
+        //push control to CategoryControllerVC
+        NSLog(@"MainScreenVC: push VC to SentenceControllerVC");
+        [self.navigationController pushViewController:scvc animated:NO];
+        
+        [scvc release];
+    }
 }
 
 - (BOOL)checkDate { 
@@ -443,6 +451,7 @@
     [super viewDidLoad];
 	
 	self.navigationItem.title = @"Memory Training";
+    
 	
 	//put "Show Log" button in top right corner
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc]
@@ -451,6 +460,10 @@
 											   target:self
 											   action:@selector(adminPressed)] autorelease];
 	
+    NSString *defaultPrefsFile = [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"];
+    NSDictionary *defaultPreferences = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPreferences];
+    
 	//initilize an administrator screen
 	asvc = [[AdminScreenVC alloc] initWithNibName:@"AdminScreenVC" bundle:nil];
 	[asvc setDelegate:self];

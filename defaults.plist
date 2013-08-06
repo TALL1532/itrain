@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>k_control_group_threshhold</key>
+	<integer>14</integer>
+	<key>k_control_group_num_words</key>
+	<integer>20</integer>
+	<key>k_control_group_reduction</key>
+	<real>0.95</real>
+	<key>k_control_group_is_on</key>
+	<false/>
+	<key>k_TaskTime</key>
+	<real>0.5</real>
+	<key>k_sentencePresentationTime</key>
+	<integer>4000</integer>
+	<key>k_decisionLetterTime</key>
+	<real>1</real>
+	<key>k_decisionWordTime</key>
+	<integer>3000</integer>
+	<key>k_categoryPresentationTime</key>
+	<real>2</real>
+	<key>k_subjectName</key>
+	<string>default_subject</string>
+</dict>
+</plist>

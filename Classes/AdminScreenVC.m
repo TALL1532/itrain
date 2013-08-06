@@ -173,7 +173,7 @@
     controlGroupReductionField.text = [NSString stringWithFormat:@"%f",[SettingsManager getFloatWithKey:CONTROL_GROUP_REDUCTION_TIME_FLOAT orWriteAndReturn:0.95]];
                                      
     
-    controlGroupTotalNeededField.text = [NSString stringWithFormat:@"%d", [SettingsManager getIntegerWithKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT orWriteAndReturn:15]];
+    controlGroupTotalNeededField.text = [NSString stringWithFormat:@"%d", [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT]];
     controlGroupWordsPerRoundField.text = [NSString stringWithFormat:@"%d", [SettingsManager getIntegerWithKey:CONTROL_GROUP_NUM_WORDS_INT orWriteAndReturn:20]];
     
 	if(![fileManager fileExistsAtPath:filePath]) {
