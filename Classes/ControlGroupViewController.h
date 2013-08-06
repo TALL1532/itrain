@@ -18,7 +18,7 @@
 #import "ControlFeedbackViewController.h"
 #import "FeedbackDelegate.h"
 
-@interface ControlGroupViewController : UIViewController <UIAlertViewDelegate, FeedbackDelegate> {
+@interface ControlGroupViewController : UIViewController <FeedbackDelegate> {
     NSMutableArray* _inCategroyTrack;
     NSMutableArray* _wordTrack;
     NSInteger _numWords;

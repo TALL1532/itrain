@@ -149,7 +149,7 @@
     categoryLabel.text = @"";
 
 
-    _timeForTask = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:TASK_TIME] floatValue] * 60;
+    _timeForTask = [[NSUserDefaults standardUserDefaults] floatForKey:TASK_TIME] * 60;
     _startTime = [[NSDate date] retain];
     
     [self nextRound];
@@ -163,6 +163,7 @@
                                             otherButtonTitles:nil];
         [done show];
         [done release];
+        [self removeFromParentViewController];
     }
     else{
         _currentWord = 0;
@@ -266,12 +267,6 @@
 
 - (IBAction)yesPressed:(id)sender{[self buttonPressed:YES];}
 - (IBAction)noPressed:(id)sender{[self buttonPressed:NO];}
-
-
-//ALERT View Delegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
-}
 
 //Feedback Delegate
 - (void)FeedbackControllerContinuePressed:(UIViewController*)sender{

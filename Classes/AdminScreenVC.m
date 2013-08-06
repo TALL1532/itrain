@@ -85,7 +85,7 @@
     [[NSUserDefaults standardUserDefaults] setInteger:[decisionWordTime.text integerValue] forKey:DECISION_PRESENTATION_TIME];
     [[NSUserDefaults standardUserDefaults] setInteger:[decisionLetterTime.text integerValue] forKey:DECISION_PRESENTATION_LETTER_TIME];
     [[NSUserDefaults standardUserDefaults] setInteger:[sentenceTime.text integerValue] forKey:SENTENCE_PRESENTATION_TIME];
-    [[NSUserDefaults standardUserDefaults] setInteger:[timeField.text floatValue] forKey:TASK_TIME];
+    [[NSUserDefaults standardUserDefaults] setFloat:[timeField.text floatValue] forKey:TASK_TIME];
     
     [[NSUserDefaults standardUserDefaults] setBool:controlGroupSwitch.on forKey:CONTROL_GROUP_ON_BOOL];
 
@@ -167,10 +167,10 @@
     decisionWordTime.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:DECISION_PRESENTATION_TIME]];
     decisionLetterTime.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:DECISION_PRESENTATION_LETTER_TIME]];
     sentenceTime.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:SENTENCE_PRESENTATION_TIME]];
-    timeField.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:TASK_TIME]];
+    timeField.text = [NSString stringWithFormat:@"%f", [[NSUserDefaults standardUserDefaults] floatForKey:TASK_TIME]];
     
     controlGroupSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:CONTROL_GROUP_ON_BOOL];
-    controlGroupReductionField.text = [NSString stringWithFormat:@"%f",[SettingsManager getFloatWithKey:CONTROL_GROUP_REDUCTION_TIME_FLOAT orWriteAndReturn:0.95]];
+    controlGroupReductionField.text = [NSString stringWithFormat:@"%f", [[NSUserDefaults standardUserDefaults] floatForKey:CONTROL_GROUP_REDUCTION_TIME_FLOAT]];
                                      
     
     controlGroupTotalNeededField.text = [NSString stringWithFormat:@"%d", [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT]];
