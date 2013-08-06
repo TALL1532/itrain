@@ -144,7 +144,7 @@
     return nil;
 }
 -(void)startTask:(NSString*)task{
-    _numWords = 20;
+    _numWords = 5;
     _currentTask = task;
     categoryLabel.text = @"";
 
@@ -212,22 +212,17 @@
     [self nextWord];
 }
 -(void)showScoreScreen{
-    CGFloat ave = 0.0;
-    for(int i = 0; i < [_speedRecords count];i++){
-        ave = ave - [(NSNumber*)[_speedRecords objectAtIndex:i] floatValue];
-    }
-    ave = ave / [_speedRecords count];
-    NSString* messege = [NSString stringWithFormat:@"You averaged %f seconds for each question answered.\n You got %d / 20 correct",ave,_totalCorrect];
-    UIAlertView *saveAlert = [[UIAlertView alloc] initWithTitle:@"Round Complete" message:messege
-													   delegate:self
-											  cancelButtonTitle:@"OK"
-											  otherButtonTitles:nil];
-	
-	[saveAlert show];
-	[saveAlert release];
+
+    ControlFeedbackViewController* feedback = [[ControlFeedbackViewController alloc] init];
+    feedback.delegate = self;
+    feedback.modalPresentationStyle = UIModalPresentationFormSheet;
+    feedback.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:feedback animated:YES completion:nil];
+
+    feedback.view.superview.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    feedback.view.superview.bounds = CGRectMake(0, 0, 400, 500);
 }
 -(void)buttonPressed:(BOOL)wasTrue {
-    NSLog(@"asdfasdfasdf");
     if(_hasPressedButton) return;
     NSNumber* time = [NSNumber numberWithDouble:[revealTime timeIntervalSinceNow]];
     [revealTime release];
@@ -275,9 +270,23 @@
 
 //ALERT View Delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    [self nextRound];
+    
 }
 
+//Feedback Delegate
+- (void)FeedbackControllerContinuePressed:(UIViewController*)sender{
+    [sender dismissViewControllerAnimated:NO completion:nil];
+    [sender release];
+    [self nextRound];
+}
+- (void)FeedbackControllerDoneLoading:(ControlFeedbackViewController *)sender{
+    CGFloat ave = 0.0;
+    for(int i = 0; i < [_speedRecords count];i++){
+        ave = ave - [(NSNumber*)[_speedRecords objectAtIndex:i] floatValue];
+    }
+    ave = ave / [_speedRecords count];
+    [sender setupFieldsWithNumCorrect:_totalCorrect numIncorrect:_numWords averageTime:ave andAllowedTime:_timePerWord];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

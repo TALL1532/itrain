@@ -11,6 +11,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		4209ACC817B0B31900FF4406 /* ControlFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209ACC617B0B31800FF4406 /* ControlFeedbackViewController.m */; };
+		4209ACC917B0B31900FF4406 /* ControlFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4209ACC717B0B31900FF4406 /* ControlFeedbackViewController.xib */; };
 		4211AC7517AC3AC300E2B78B /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4211AC7417AC3AAA00E2B78B /* SettingsManager.m */; };
 		4217033A179F75F3003E9A65 /* ControlGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42170338179F75F3003E9A65 /* ControlGroupViewController.m */; };
 		4217033B179F75F3003E9A65 /* ControlGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42170339179F75F3003E9A65 /* ControlGroupViewController.xib */; };
@@ -116,6 +118,10 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Memory_Training_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory_Training_Prefix.pch; sourceTree = "<group>"; };
+		4209ACC517B0B31800FF4406 /* ControlFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlFeedbackViewController.h; sourceTree = "<group>"; };
+		4209ACC617B0B31800FF4406 /* ControlFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlFeedbackViewController.m; sourceTree = "<group>"; };
+		4209ACC717B0B31900FF4406 /* ControlFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlFeedbackViewController.xib; sourceTree = "<group>"; };
+		4209ACCA17B0C22100FF4406 /* FeedbackDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackDelegate.h; sourceTree = "<group>"; };
 		4211AC7317AC3AAA00E2B78B /* SettingsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
 		4211AC7417AC3AAA00E2B78B /* SettingsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
 		42170337179F75F3003E9A65 /* ControlGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlGroupViewController.h; sourceTree = "<group>"; };
@@ -341,6 +347,10 @@
 				42170337179F75F3003E9A65 /* ControlGroupViewController.h */,
 				42170338179F75F3003E9A65 /* ControlGroupViewController.m */,
 				42170339179F75F3003E9A65 /* ControlGroupViewController.xib */,
+				4209ACCA17B0C22100FF4406 /* FeedbackDelegate.h */,
+				4209ACC517B0B31800FF4406 /* ControlFeedbackViewController.h */,
+				4209ACC617B0B31800FF4406 /* ControlFeedbackViewController.m */,
+				4209ACC717B0B31900FF4406 /* ControlFeedbackViewController.xib */,
 				A17E1B7315BCDC1C006B6E3F /* RecallEntryVC.h */,
 				A17E1B7415BCDC1C006B6E3F /* RecallEntryVC.m */,
 				A17E1B7515BCDC1C006B6E3F /* RecallEntryVC.xib */,
@@ -568,6 +578,7 @@
 				4217033B179F75F3003E9A65 /* ControlGroupViewController.xib in Resources */,
 				4217033E179FB08F003E9A65 /* no.png in Resources */,
 				4217033F179FB08F003E9A65 /* yes.png in Resources */,
+				4209ACC917B0B31900FF4406 /* ControlFeedbackViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +606,7 @@
 				4B553D03179A790100E302C0 /* main.m in Sources */,
 				4217033A179F75F3003E9A65 /* ControlGroupViewController.m in Sources */,
 				4211AC7517AC3AC300E2B78B /* SettingsManager.m in Sources */,
+				4209ACC817B0B31900FF4406 /* ControlFeedbackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

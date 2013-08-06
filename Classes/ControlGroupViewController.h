@@ -15,8 +15,10 @@
 #import "DecisionVC.h"
 #import "SentenceVC.h"
 #import "AdminScreenVC.h"
+#import "ControlFeedbackViewController.h"
+#import "FeedbackDelegate.h"
 
-@interface ControlGroupViewController : UIViewController <UIAlertViewDelegate> {
+@interface ControlGroupViewController : UIViewController <UIAlertViewDelegate, FeedbackDelegate> {
     NSMutableArray* _inCategroyTrack;
     NSMutableArray* _wordTrack;
     NSInteger _numWords;
