@@ -15,11 +15,11 @@
 	<key>k_sentencePresentationTime</key>
 	<integer>4000</integer>
 	<key>k_decisionLetterTime</key>
-	<real>1</real>
+	<integer>1000</integer>
 	<key>k_decisionWordTime</key>
-	<integer>3000</integer>
+	<real>3</real>
 	<key>k_categoryPresentationTime</key>
-	<real>2</real>
+	<integer>2000</integer>
 	<key>k_subjectName</key>
 	<string>default_subject</string>
 </dict>
