@@ -16,6 +16,10 @@
 #define DECISION_PRESENTATION_LETTER_TIME @"k_decisionLetterTime"
 #define SENTENCE_PRESENTATION_TIME @"k_sentencePresentationTime"
 #define TASK_TIME @"k_TaskTime"
+#define CONTROL_GROUP_ON_BOOL @"k_control_group_is_on"
+#define CONTROL_GROUP_REDUCTION_TIME_FLOAT @"k_control_group_is_on"
+#define CONTROL_GROUP_NUM_WORDS_INT @"k_control_group_is_on"
+#define CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT @"k_control_group_is_on"
 
 
 
@@ -44,6 +48,11 @@
     IBOutlet UITextField *timeField;
     IBOutlet UITextField *daysPlayedField;
     IBOutlet UIButton *clearStateButton;
+    
+    IBOutlet UISwitch *controlGroupSwitch;
+    IBOutlet UITextField* controlGroupReductionField;
+    IBOutlet UITextField* controlGroupTotalNeededField;
+    IBOutlet UITextField* controlGroupWordsPerRoundField;
 
     IBOutlet UISwitch *mainMenuButtonsVisibleSwitch;
 	ViewLog *viewLog;

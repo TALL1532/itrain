@@ -87,7 +87,14 @@
     [[NSUserDefaults standardUserDefaults] setInteger:[sentenceTime.text integerValue] forKey:SENTENCE_PRESENTATION_TIME];
     [[NSUserDefaults standardUserDefaults] setInteger:[timeField.text floatValue] forKey:TASK_TIME];
     
+    [[NSUserDefaults standardUserDefaults] setBool:controlGroupSwitch.on forKey:CONTROL_GROUP_ON_BOOL];
+
+    [[NSUserDefaults standardUserDefaults] setFloat:[controlGroupReductionField.text floatValue] forKey:CONTROL_GROUP_REDUCTION_TIME_FLOAT];
     
+    [[NSUserDefaults standardUserDefaults] setInteger:[controlGroupWordsPerRoundField.text integerValue] forKey:CONTROL_GROUP_NUM_WORDS_INT];
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:[controlGroupTotalNeededField.text integerValue] forKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT];
+
 	//WHY... WHY!!!?!?!? note to self: try not to think about how the rest of the code is written
 	//write each variable to the text file "ExpSettings.txt" so we can load them later
 	int i; NSString *stringToWrite;
@@ -136,7 +143,6 @@
 		[fileHandle writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]]; //add carriage return
 		
 	}
-	//[fileHandle closeFile];
 	
 	[fileHandle synchronizeFile]; //adding this makes sure the file is stored!
 	
@@ -162,6 +168,13 @@
     decisionLetterTime.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:DECISION_PRESENTATION_LETTER_TIME]];
     sentenceTime.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:SENTENCE_PRESENTATION_TIME]];
     timeField.text = [NSString stringWithFormat:@"%d",[AdminScreenVC getVarForKey:TASK_TIME]];
+    
+    controlGroupSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:CONTROL_GROUP_ON_BOOL];
+    controlGroupReductionField.text = [NSString stringWithFormat:@"%f",[SettingsManager getFloatWithKey:CONTROL_GROUP_REDUCTION_TIME_FLOAT orWriteAndReturn:0.95]];
+                                     
+    
+    controlGroupTotalNeededField.text = [NSString stringWithFormat:@"%d", [SettingsManager getIntegerWithKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT orWriteAndReturn:15]];
+    controlGroupWordsPerRoundField.text = [NSString stringWithFormat:@"%d", [SettingsManager getIntegerWithKey:CONTROL_GROUP_NUM_WORDS_INT orWriteAndReturn:20]];
     
 	if(![fileManager fileExistsAtPath:filePath]) {
 		//file isnt there, do nothing
