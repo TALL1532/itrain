@@ -18,6 +18,7 @@
 #import "ControlFeedbackViewController.h"
 #import "FeedbackDelegate.h"
 #import "ModalInstructionsViewController.h"
+#import "LoggingSingleton.h"
 @interface ControlGroupViewController : UIViewController <FeedbackDelegate, ModalInstructionControlGroup> {
     NSMutableArray* _inCategroyTrack;
     NSMutableArray* _wordTrack;
@@ -51,6 +52,7 @@
 - (IBAction)noPressed:(id)sender;
 +(NSMutableArray*)shuffle:(NSMutableArray*)array;
 +(NSTimeInterval)getTimeForWordInTask:(NSString*)task;
++(NSInteger)getTaskLevel:(NSString*)task;
 +(void)increaseLevelForWordInTask:(NSString*)task;
 @end
 

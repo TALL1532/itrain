@@ -250,6 +250,25 @@
         [ControlGroupViewController increaseLevelForWordInTask:_currentTask];
     }
     
+    CGFloat ave = 0.0;
+    for(int i = 0; i < [_speedRecords count];i++){
+        ave = ave - [(NSNumber*)[_speedRecords objectAtIndex:i] floatValue];
+    }
+    ave = ave / (float)[_speedRecords count];
+    
+    NSDateFormatter *date_formatter=[[NSDateFormatter alloc] init];
+	[date_formatter setDateFormat:@"MM.dd.yyyy - HH:mm:ss.SSS "];
+    [[LoggingSingleton sharedSingleton]
+     storeTrialDataWithName:[LoggingSingleton getSubjectName]
+     task:_currentTask
+     sessionNumber:[LoggingSingleton getSessionNumber]
+     date:[date_formatter stringFromDate:[NSDate date]]
+     trial:[LoggingSingleton sharedSingleton].currentTrial
+     taskAccuracy:((float)_totalCorrect/(float)_numWords)
+     averageReactionTime:(int)(ave*1000)
+     memoryAccuracy:0.0
+     andSpanLevel: [ControlGroupViewController getTaskLevel:_currentTask]];
+    [[LoggingSingleton sharedSingleton] writeBufferToFile];
 }
 -(void)buttonPressed:(BOOL)wasTrue {
     if(_hasPressedButton) return;
@@ -316,6 +335,19 @@
         wordTime = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:SENTENCE_PRESENTATION_TIME] floatValue];
     }
     return (pow(diffIncrease, level) * wordTime);
+}
++(NSInteger)getTaskLevel:(NSString*)task{
+    NSInteger level;
+    if([task isEqualToString: category]){
+        level = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_INT];
+    }
+    if([task isEqualToString: decision]){
+        level = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT];
+    }
+    if([task isEqualToString: sentence]){
+        level = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT];
+    }
+    return level;
 }
 +(void)increaseLevelForWordInTask:(NSString*)task{
     NSInteger level;
