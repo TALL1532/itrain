@@ -8,8 +8,10 @@
 	<integer>0</integer>
 	<key>k_control_group_level_category</key>
 	<integer>0</integer>
-	<key>k_control_group_threshhold</key>
+	<key>k_control_group_promote_threshhold</key>
 	<integer>14</integer>
+	<key>k_control_group_demote_threshhold</key>
+	<integer>3</integer>
 	<key>k_control_group_num_words</key>
 	<integer>20</integer>
 	<key>k_control_group_reduction</key>

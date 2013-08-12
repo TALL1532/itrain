@@ -249,6 +249,9 @@
     if( _totalCorrect >= [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT]){
         [ControlGroupViewController increaseLevelForWordInTask:_currentTask];
     }
+    if( _totalCorrect <= [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_NEEDED_TO_DEMOTE_INT]){
+        [ControlGroupViewController decreaseLevelForWordInTask:_currentTask];
+    }
     
     CGFloat ave = 0.0;
     for(int i = 0; i < [_speedRecords count];i++){
@@ -365,6 +368,24 @@
     }
     
 }
++(void)decreaseLevelForWordInTask:(NSString*)task{
+    NSInteger level = [ControlGroupViewController getTaskLevel:task];
+    //prevent negative levels
+    if (level != 0) {
+        level --;
+    }
+    if([task isEqualToString: category]){
+        [[NSUserDefaults standardUserDefaults] setInteger:level forKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_INT];
+    }
+    if([task isEqualToString: decision]){
+        [[NSUserDefaults standardUserDefaults] setInteger:level forKey:CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT];
+    }
+    if([task isEqualToString: sentence]){
+        [[NSUserDefaults standardUserDefaults] setInteger:level forKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT];
+    }
+    
+}
+
 
 - (IBAction)yesPressed:(id)sender{[self buttonPressed:YES];}
 - (IBAction)noPressed:(id)sender{[self buttonPressed:NO];}

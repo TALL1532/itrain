@@ -94,6 +94,7 @@
     [[NSUserDefaults standardUserDefaults] setInteger:[controlGroupWordsPerRoundField.text integerValue] forKey:CONTROL_GROUP_NUM_WORDS_INT];
     
     [[NSUserDefaults standardUserDefaults] setInteger:[controlGroupTotalNeededField.text integerValue] forKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT];
+    [[NSUserDefaults standardUserDefaults] setInteger:[controlGroupTotalNeededDemoteField.text integerValue] forKey:CONTROL_GROUP_NUM_NEEDED_TO_DEMOTE_INT];
 
     [[NSUserDefaults standardUserDefaults] setInteger:[controlGroupCategoryLevel.text integerValue] forKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_INT];
     [[NSUserDefaults standardUserDefaults] setInteger:[controlGroupDecisionLevel.text integerValue] forKey:CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT];
@@ -180,6 +181,7 @@
                                      
     
     controlGroupTotalNeededField.text = [NSString stringWithFormat:@"%d", [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT]];
+    controlGroupTotalNeededDemoteField.text = [NSString stringWithFormat:@"%d", [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_NEEDED_TO_DEMOTE_INT]];
     controlGroupWordsPerRoundField.text = [NSString stringWithFormat:@"%d", [SettingsManager getIntegerWithKey:CONTROL_GROUP_NUM_WORDS_INT orWriteAndReturn:20]];
     
     

@@ -19,7 +19,8 @@
 #define CONTROL_GROUP_ON_BOOL @"k_control_group_is_on"
 #define CONTROL_GROUP_REDUCTION_TIME_FLOAT @"k_control_group_reduction"
 #define CONTROL_GROUP_NUM_WORDS_INT @"k_control_group_num_words"
-#define CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT @"k_control_group_threshhold"
+#define CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT @"k_control_group_promote_threshhold"
+#define CONTROL_GROUP_NUM_NEEDED_TO_DEMOTE_INT @"k_control_group_demote_threshhold"
 
 #define CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_INT @"k_control_group_level_category"
 #define CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT @"k_control_group_level_dec"
@@ -55,6 +56,7 @@
     IBOutlet UISwitch *controlGroupSwitch;
     IBOutlet UITextField* controlGroupReductionField;
     IBOutlet UITextField* controlGroupTotalNeededField;
+    IBOutlet UITextField* controlGroupTotalNeededDemoteField;
     IBOutlet UITextField* controlGroupWordsPerRoundField;
     
     IBOutlet UITextField* controlGroupDiffIncrease;

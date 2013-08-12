@@ -54,5 +54,7 @@
 +(NSTimeInterval)getTimeForWordInTask:(NSString*)task;
 +(NSInteger)getTaskLevel:(NSString*)task;
 +(void)increaseLevelForWordInTask:(NSString*)task;
++(void)decreaseLevelForWordInTask:(NSString*)task;
+
 @end
 
