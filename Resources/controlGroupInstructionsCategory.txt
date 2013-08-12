@@ -1,0 +1,7 @@
+In this game, a series of single words will appear on the screen one at a time, along with a particular category. 
+
+You will decide if the word belongs to the given category or not. If the word belongs to the category, you should press the YES button (on the left hand side of the screen). If the word does not belong to the category, you should press the NO button (on the right hand side of the screen). Be sure to read each word and make your judgment quickly. 
+
+Be sure to read each word and make your judgment as quickly as possible. As you progress through the game, the speed with which the words are presented will increase. Your job is to maintain as of high of a level of accuracy as possible while making your decisions as fast as possible. 
+
+At the end of each set of 20 trials, you will be given feedback about your performance before beginning the next set of trials. 

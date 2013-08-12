@@ -1,0 +1,14 @@
+In this game, a series of simple sentences will appear on the screen one at a time. 
+
+You will read each sentence to yourself. After you are done reading, decide whether the sentence is acceptable, by pressing the YES button (on the left hand side of the screen) or unacceptable, by pressing the NO button (on the right hand side of the screen). Please don't make this judgment based on the truth of the sentence, but rather judge whether the sentence is a plausible and acceptable sentence in English. 
+
+For example, an acceptable sentence would be: 
+Development of the screenplay was done by a team of three authors. 
+
+An example of an unacceptable sentence is:
+A laptop excited in utter and favorite day is confusing a melt.
+
+Be sure to read each sentence and make your judgment as quickly as possible. As you progress through the game, the speed with which the sentences are presented will increase. Your job is to maintain as high of a level of accuracy as possible while making your decisions as fast as possible. 
+
+At the end of each set of 20 trials, you will be given feedback about your performance before beginning the next set of trials.
+
