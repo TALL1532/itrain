@@ -13,6 +13,34 @@
 
 
 @implementation ControlGroupViewController
+-(void)showInstructions:(NSString*)task{
+    ModalInstructionsViewController* instructions =  [[ModalInstructionsViewController alloc] init];
+    instructions.delegate = self;
+    instructions.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:instructions animated:NO completion:nil];
+    NSString *instructionsPath;
+
+    if([task isEqualToString: category]){
+        instructionsPath = [[NSBundle mainBundle] pathForResource:@"controlGroupInstructionsCategory" ofType:@"txt"];
+    }
+    if([task isEqualToString: decision]){
+        instructionsPath = [[NSBundle mainBundle] pathForResource:@"controlGroupInstructionsDecision" ofType:@"txt"];
+    }
+    if([task isEqualToString: sentence]){
+        instructionsPath = [[NSBundle mainBundle] pathForResource:@"controlGroupInstructionsSentence" ofType:@"txt"];
+
+    }
+	NSString *instructionsText = [NSString stringWithContentsOfFile:instructionsPath
+													   encoding:NSUTF8StringEncoding
+														  error:nil];
+    
+    [instructions setText:instructionsText];
+}
+-(void)doneWithInstructions:(id)controller{
+    NSLog(@"DONE WITH INSTRUCTIONS!");
+    [self nextRound];
+    //[(ModalInstructionsViewController*) controller release];
+}
 -(NSMutableArray*)generateContentFor:(NSString*)task{
     NSMutableArray* truthArray = [[NSMutableArray alloc] init];
     for(int i = 0; i < _numWords; i++){
@@ -144,6 +172,8 @@
     return nil;
 }
 -(void)startTask:(NSString*)task{
+    [self showInstructions:task];
+
     _numWords = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_WORDS_INT];
     _currentTask = task;
     categoryLabel.text = @"";
@@ -152,7 +182,7 @@
     _timeForTask = [[NSUserDefaults standardUserDefaults] floatForKey:TASK_TIME] * 60;
     _startTime = [[NSDate date] retain];
     
-    [self nextRound];
+    
 }
 - (void)nextRound {
     
@@ -163,7 +193,7 @@
                                             otherButtonTitles:nil];
         [done show];
         [done release];
-        [self removeFromParentViewController];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     else{
         _currentWord = 0;

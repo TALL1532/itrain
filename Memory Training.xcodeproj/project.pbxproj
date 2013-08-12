@@ -80,6 +80,10 @@
 		4B553D01179A74FF00E302C0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B553D00179A74FF00E302C0 /* Icon.png */; };
 		4B553D03179A790100E302C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B553D02179A790100E302C0 /* main.m */; };
 		4B553D05179A792400E302C0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B553D04179A792400E302C0 /* MainWindow.xib */; };
+		4B60EBE317B8482C00D7F437 /* ModalInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B60EBE217B8482C00D7F437 /* ModalInstructionsViewController.m */; };
+		4B60EBE717B8776A00D7F437 /* controlGroupInstructionsCategory.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B60EBE417B8776A00D7F437 /* controlGroupInstructionsCategory.txt */; };
+		4B60EBE817B8776A00D7F437 /* controlGroupInstructionsDecision.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B60EBE517B8776A00D7F437 /* controlGroupInstructionsDecision.txt */; };
+		4B60EBE917B8776A00D7F437 /* controlGroupInstructionsSentence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B60EBE617B8776A00D7F437 /* controlGroupInstructionsSentence.txt */; };
 		4BC03C391780EC08002506BC /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC03C351780EC08002506BC /* libTestFlight.a */; };
 		4BC03C3A1780EC08002506BC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4BC03C361780EC08002506BC /* README.md */; };
 		4BC03C3B1780EC08002506BC /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 4BC03C371780EC08002506BC /* release_notes.md */; };
@@ -193,6 +197,11 @@
 		4B553D00179A74FF00E302C0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Assets/Icon.png; sourceTree = "<group>"; };
 		4B553D02179A790100E302C0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
 		4B553D04179A792400E302C0 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = Classes/MainWindow.xib; sourceTree = "<group>"; };
+		4B60EBE117B8482C00D7F437 /* ModalInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalInstructionsViewController.h; sourceTree = "<group>"; };
+		4B60EBE217B8482C00D7F437 /* ModalInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalInstructionsViewController.m; sourceTree = "<group>"; };
+		4B60EBE417B8776A00D7F437 /* controlGroupInstructionsCategory.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = controlGroupInstructionsCategory.txt; path = Resources/controlGroupInstructionsCategory.txt; sourceTree = "<group>"; };
+		4B60EBE517B8776A00D7F437 /* controlGroupInstructionsDecision.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = controlGroupInstructionsDecision.txt; path = Resources/controlGroupInstructionsDecision.txt; sourceTree = "<group>"; };
+		4B60EBE617B8776A00D7F437 /* controlGroupInstructionsSentence.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = controlGroupInstructionsSentence.txt; path = Resources/controlGroupInstructionsSentence.txt; sourceTree = "<group>"; };
 		4B88EFCB17545D5300CFE83C /* ProperDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProperDataProtocol.h; sourceTree = "<group>"; };
 		4BC03C351780EC08002506BC /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		4BC03C361780EC08002506BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -313,6 +322,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4B60EBE417B8776A00D7F437 /* controlGroupInstructionsCategory.txt */,
+				4B60EBE517B8776A00D7F437 /* controlGroupInstructionsDecision.txt */,
+				4B60EBE617B8776A00D7F437 /* controlGroupInstructionsSentence.txt */,
 				4209ACCD17B0DEEE00FF4406 /* defaults.plist */,
 				4B553D00179A74FF00E302C0 /* Icon.png */,
 				4B553D04179A792400E302C0 /* MainWindow.xib */,
@@ -347,6 +359,8 @@
 		4B0D5F1116C8CF01000F8651 /* Game ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4B60EBE117B8482C00D7F437 /* ModalInstructionsViewController.h */,
+				4B60EBE217B8482C00D7F437 /* ModalInstructionsViewController.m */,
 				42170337179F75F3003E9A65 /* ControlGroupViewController.h */,
 				42170338179F75F3003E9A65 /* ControlGroupViewController.m */,
 				42170339179F75F3003E9A65 /* ControlGroupViewController.xib */,
@@ -583,6 +597,9 @@
 				4217033F179FB08F003E9A65 /* yes.png in Resources */,
 				4209ACC917B0B31900FF4406 /* ControlFeedbackViewController.xib in Resources */,
 				4209ACCE17B0DEEE00FF4406 /* defaults.plist in Resources */,
+				4B60EBE717B8776A00D7F437 /* controlGroupInstructionsCategory.txt in Resources */,
+				4B60EBE817B8776A00D7F437 /* controlGroupInstructionsDecision.txt in Resources */,
+				4B60EBE917B8776A00D7F437 /* controlGroupInstructionsSentence.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +628,7 @@
 				4217033A179F75F3003E9A65 /* ControlGroupViewController.m in Sources */,
 				4211AC7517AC3AC300E2B78B /* SettingsManager.m in Sources */,
 				4209ACC817B0B31900FF4406 /* ControlFeedbackViewController.m in Sources */,
+				4B60EBE317B8482C00D7F437 /* ModalInstructionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

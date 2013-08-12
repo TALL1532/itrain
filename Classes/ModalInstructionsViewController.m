@@ -7,13 +7,23 @@
 //
 
 #import "ModalInstructionsViewController.h"
-
+#define padding 10.0
 @interface ModalInstructionsViewController ()
 
 @end
 
 @implementation ModalInstructionsViewController
 
+@synthesize delegate = _delegate;
+
+-(void)donePressed:(id)sender{
+    [_delegate doneWithInstructions:self];
+    [self dismissViewControllerAnimated:NO completion:nil];
+
+}
+-(void)setText:(NSString *)instructons{
+    _instructions.text = instructons;
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,8 +35,20 @@
 
 - (void)viewDidLoad
 {
+    _instructions = [[UITextView alloc] initWithFrame:CGRectMake(padding, padding, 540 - 2* padding, 620 - 40.0 - 3*padding)];
+    _instructions.text = @"NO INSTRUCTION PROVIDED";
+    _instructions.font = [UIFont fontWithName:@"Arial" size:20.0];
+    [self.view addSubview:_instructions];
+    [_instructions release];
+    
+    UIButton* doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [doneButton setTitle:@"Got It!" forState:UIControlStateNormal];
+    doneButton.frame = CGRectMake( padding, 620.0 - 40.0 - padding, 70.0, 40.0);
+    [doneButton addTarget:self action:@selector(donePressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:doneButton];
+    [doneButton release];
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

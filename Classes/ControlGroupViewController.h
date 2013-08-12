@@ -17,8 +17,8 @@
 #import "AdminScreenVC.h"
 #import "ControlFeedbackViewController.h"
 #import "FeedbackDelegate.h"
-
-@interface ControlGroupViewController : UIViewController <FeedbackDelegate> {
+#import "ModalInstructionsViewController.h"
+@interface ControlGroupViewController : UIViewController <FeedbackDelegate, ModalInstructionControlGroup> {
     NSMutableArray* _inCategroyTrack;
     NSMutableArray* _wordTrack;
     NSInteger _numWords;
@@ -36,6 +36,7 @@
     
     NSTimeInterval _timeForTask;
     NSDate * _startTime;
+    
     
     IBOutlet UIView* countDown;
     IBOutlet UILabel* content;
