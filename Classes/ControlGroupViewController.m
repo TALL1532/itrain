@@ -17,7 +17,7 @@
     ModalInstructionsViewController* instructions =  [[ModalInstructionsViewController alloc] init];
     instructions.delegate = self;
     instructions.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:instructions animated:NO completion:nil];
+    [self presentViewController:instructions animated:YES completion:nil];
     NSString *instructionsPath;
 
     if([task isEqualToString: category]){
@@ -418,7 +418,8 @@
 {
     [super viewDidLoad];
     [self hideButtons];
-    // Do any additional setup after loading the view from its nib.
+    content.font = [UIFont systemFontOfSize:50];
+    content.textAlignment = NSTextAlignmentCenter;
 }
 
 - (void)didReceiveMemoryWarning

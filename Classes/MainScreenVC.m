@@ -167,7 +167,7 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:CONTROL_GROUP_ON_BOOL]){
         ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
         
-        [self presentViewController:vc animated:YES completion:^{
+        [self presentViewController:vc animated:NO completion:^{
             [vc startTask:category];
         }];
     }
@@ -193,7 +193,7 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:CONTROL_GROUP_ON_BOOL]){
         ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
         
-        [self presentViewController:vc animated:YES completion:^{
+        [self presentViewController:vc animated:NO completion:^{
             [vc startTask:decision];
         }];
     }
@@ -215,7 +215,7 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:CONTROL_GROUP_ON_BOOL]){
         ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
         
-        [self presentViewController:vc animated:YES completion:^{
+        [self presentViewController:vc animated:NO completion:^{
             [vc startTask:sentence];
         }];
     }
