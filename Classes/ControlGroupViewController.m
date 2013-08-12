@@ -185,7 +185,7 @@
     
 }
 - (void)nextRound {
-    
+    _totalCorrect = 0;
     if( [[_startTime dateByAddingTimeInterval:_timeForTask] timeIntervalSinceNow] < 0){
         UIAlertView* done = [[UIAlertView alloc] initWithTitle:@"Task Complete!" message:@"press okay to continue"
                                                      delegate:nil
@@ -204,15 +204,8 @@
         [self showButtons];
         _wordTrack = [self generateContentFor:_currentTask];
         
-        if([_currentTask isEqualToString:category]){
-            _timePerWord = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:@"k_categoryPresentationTime"] floatValue];
-        }
-        else if([_currentTask isEqualToString:decision]){
-            _timePerWord = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:@"k_decisionWordTime"] floatValue];
-        }
-        else if([_currentTask isEqualToString:sentence]){
-            _timePerWord = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:@"k_sentencePresentationTime"] floatValue];
-        }
+        _timePerWord = [ControlGroupViewController getTimeForWordInTask:_currentTask];
+
         [self nextWord];
     }
 }
@@ -252,6 +245,11 @@
 
     feedback.view.superview.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     feedback.view.superview.bounds = CGRectMake(0, 0, 400, 500);
+    
+    if( _totalCorrect >= [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT]){
+        [ControlGroupViewController increaseLevelForWordInTask:_currentTask];
+    }
+    
 }
 -(void)buttonPressed:(BOOL)wasTrue {
     if(_hasPressedButton) return;
@@ -293,6 +291,47 @@
         [array exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
     return array;
+}
++(NSTimeInterval)getTimeForWordInTask:(NSString*)task{
+    NSInteger level;
+    if([task isEqualToString: category]){
+        level = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_INT];
+    }
+    if([task isEqualToString: decision]){
+        level = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT];
+    }
+    if([task isEqualToString: sentence]){
+        level = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT];
+    }
+    CGFloat diffIncrease = [[NSUserDefaults standardUserDefaults] floatForKey:CONTROL_GROUP_REDUCTION_TIME_FLOAT];
+
+    CGFloat wordTime;
+    if([task isEqualToString:category]){
+        wordTime = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:CATEGORY_PRESENTATION_TIME] floatValue];
+    }
+    else if([task isEqualToString:decision]){
+        wordTime = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:DECISION_PRESENTATION_TIME] floatValue];
+    }
+    else if([task isEqualToString:sentence]){
+        wordTime = [(NSNumber*)[[NSUserDefaults standardUserDefaults] valueForKey:SENTENCE_PRESENTATION_TIME] floatValue];
+    }
+    return (pow(diffIncrease, level) * wordTime);
+}
++(void)increaseLevelForWordInTask:(NSString*)task{
+    NSInteger level;
+    if([task isEqualToString: category]){
+        level = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_INT] + 1;
+        [[NSUserDefaults standardUserDefaults] setInteger:level forKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_INT];
+    }
+    if([task isEqualToString: decision]){
+        level = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT] + 1;
+        [[NSUserDefaults standardUserDefaults] setInteger:level forKey:CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT];
+    }
+    if([task isEqualToString: sentence]){
+        level = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT] + 1;
+        [[NSUserDefaults standardUserDefaults] setInteger:level forKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT];
+    }
+    
 }
 
 - (IBAction)yesPressed:(id)sender{[self buttonPressed:YES];}

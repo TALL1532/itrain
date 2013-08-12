@@ -95,6 +95,12 @@
     
     [[NSUserDefaults standardUserDefaults] setInteger:[controlGroupTotalNeededField.text integerValue] forKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT];
 
+    [[NSUserDefaults standardUserDefaults] setInteger:[controlGroupCategoryLevel.text integerValue] forKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_INT];
+    [[NSUserDefaults standardUserDefaults] setInteger:[controlGroupDecisionLevel.text integerValue] forKey:CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT];
+    [[NSUserDefaults standardUserDefaults] setInteger:[controlGroupSentenceLevel.text integerValue] forKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT];
+    
+    
+
 	//WHY... WHY!!!?!?!? note to self: try not to think about how the rest of the code is written
 	//write each variable to the text file "ExpSettings.txt" so we can load them later
 	int i; NSString *stringToWrite;
@@ -175,6 +181,12 @@
     
     controlGroupTotalNeededField.text = [NSString stringWithFormat:@"%d", [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT]];
     controlGroupWordsPerRoundField.text = [NSString stringWithFormat:@"%d", [SettingsManager getIntegerWithKey:CONTROL_GROUP_NUM_WORDS_INT orWriteAndReturn:20]];
+    
+    
+    controlGroupCategoryLevel.text = [NSString stringWithFormat:@"%d", [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_INT]];
+    controlGroupDecisionLevel.text = [NSString stringWithFormat:@"%d", [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT]];
+    controlGroupSentenceLevel.text = [NSString stringWithFormat:@"%d", [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT]];
+    
     
 	if(![fileManager fileExistsAtPath:filePath]) {
 		//file isnt there, do nothing
@@ -309,6 +321,12 @@
 	sentenceWordsField.text = @"3";
 	dateField.text = @"UNPLAYED";
 	daysPlayedField.text = @"0";
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_INT];
+    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT];
+    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT];
+    [[NSUserDefaults standardUserDefaults] setFloat:0.95 forKey:CONTROL_GROUP_REDUCTION_TIME_FLOAT];
+    
 	[[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"k_sessionNumber"];
     NSFileManager *fileMgr = [[NSFileManager defaultManager] retain];
     NSError * error;

@@ -21,6 +21,9 @@
 #define CONTROL_GROUP_NUM_WORDS_INT @"k_control_group_num_words"
 #define CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT @"k_control_group_threshhold"
 
+#define CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_INT @"k_control_group_level_category"
+#define CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT @"k_control_group_level_dec"
+#define CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT @"k_control_group_level_sentence"
 
 
 
@@ -53,6 +56,12 @@
     IBOutlet UITextField* controlGroupReductionField;
     IBOutlet UITextField* controlGroupTotalNeededField;
     IBOutlet UITextField* controlGroupWordsPerRoundField;
+    
+    IBOutlet UITextField* controlGroupDiffIncrease;
+    IBOutlet UITextField* controlGroupCategoryLevel;
+    IBOutlet UITextField* controlGroupDecisionLevel;
+    IBOutlet UITextField* controlGroupSentenceLevel;
+
 
     IBOutlet UISwitch *mainMenuButtonsVisibleSwitch;
 	ViewLog *viewLog;

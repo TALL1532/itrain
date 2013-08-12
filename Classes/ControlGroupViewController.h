@@ -50,5 +50,7 @@
 - (IBAction)yesPressed:(id)sender;
 - (IBAction)noPressed:(id)sender;
 +(NSMutableArray*)shuffle:(NSMutableArray*)array;
++(NSTimeInterval)getTimeForWordInTask:(NSString*)task;
++(void)increaseLevelForWordInTask:(NSString*)task;
 @end
 
