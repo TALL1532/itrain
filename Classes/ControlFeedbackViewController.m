@@ -7,6 +7,7 @@
 //
 
 #import "ControlFeedbackViewController.h"
+#import "ControlGroupViewController.h"
 
 @implementation ControlFeedbackViewController
 
@@ -16,13 +17,15 @@
     [_delegate FeedbackControllerContinuePressed:self];
 }
 
-- (void)setupFieldsWithNumCorrect:(NSInteger)correct numIncorrect:(NSInteger)incorrect averageTime:(NSTimeInterval)aveTime andAllowedTime:(NSTimeInterval)allowedTime{
+- (void)setupFieldsWithNumCorrect:(NSInteger)correct numIncorrect:(NSInteger)incorrect averageTime:(NSTimeInterval)aveTime allowedTime:(NSTimeInterval)allowedTime levelAchieved:(NSInteger)level{
     _topTitle.text = @"Finished Round!";
-    _timeScore.text = [NSString stringWithFormat:@"%.02f/%.02f average time", aveTime, allowedTime];
+    _timeScore.text = [NSString stringWithFormat:@"%.02f/%.02f average reaction time", aveTime, allowedTime /1000];
     _correctScore.text = [NSString stringWithFormat:@"%d/%d answers correct", correct, incorrect];
-    _totalScore.text = @"hmmm there must be some way to combine these";
+    _totalScore.text = [NSString stringWithFormat:@"Level Achieved: %d",level];
 }
-
+- (void)recognizeHighScore{
+    _highScoreLabel.hidden = NO;
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

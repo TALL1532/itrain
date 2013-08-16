@@ -16,13 +16,14 @@
     IBOutlet UILabel* _correctScore;
     IBOutlet UILabel* _timeScore;
     IBOutlet UILabel* _totalScore;
+    IBOutlet UILabel* _highScoreLabel;
 }
 
 @property (nonatomic, retain) id <FeedbackDelegate> delegate;
 
 - (IBAction)continuePressed:(id)button;
 
-- (void)setupFieldsWithNumCorrect:(NSInteger)correct numIncorrect:(NSInteger)incorrect averageTime:(NSTimeInterval)aveTime andAllowedTime:(NSTimeInterval)allowedTime;
-
+- (void)setupFieldsWithNumCorrect:(NSInteger)correct numIncorrect:(NSInteger)incorrect averageTime:(NSTimeInterval)aveTime allowedTime:(NSTimeInterval)allowedTime levelAchieved:(NSInteger)level;
+- (void)recognizeHighScore;
 @end
 

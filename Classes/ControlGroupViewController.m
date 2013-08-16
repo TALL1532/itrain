@@ -182,6 +182,7 @@
     _timeForTask = [[NSUserDefaults standardUserDefaults] floatForKey:TASK_TIME] * 60;
     _startTime = [[NSDate date] retain];
     
+    [self updateLevelIndicatorLabel];
     
 }
 - (void)nextRound {
@@ -227,31 +228,31 @@
 }
 -(void)animateClock:(NSTimeInterval)time{
     NSLog((@"animating"));
-    countDown.frame = CGRectMake(0, 0, self.view.frame.size.width, 20);
+    countDown.frame = CGRectMake(0, 0, self.view.frame.size.width, countDown.frame.size.height);
     [UIView animateWithDuration:time/1000 animations:^{
-        countDown.frame = CGRectMake(0, 0, 0, 20);
+        countDown.frame = CGRectMake(0, 0, 0, countDown.frame.size.height);
     }];
 }
 -(void)timerUp:(id)sender{
     [self nextWord];
 }
 -(void)showScoreScreen{
-
-    ControlFeedbackViewController* feedback = [[ControlFeedbackViewController alloc] init];
-    feedback.delegate = self;
-    feedback.modalPresentationStyle = UIModalPresentationFormSheet;
-    feedback.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:feedback animated:YES completion:nil];
-
-    feedback.view.superview.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    feedback.view.superview.bounds = CGRectMake(0, 0, 400, 500);
-    
     if( _totalCorrect >= [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT]){
         [ControlGroupViewController increaseLevelForWordInTask:_currentTask];
     }
     if( _totalCorrect <= [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_NEEDED_TO_DEMOTE_INT]){
         [ControlGroupViewController decreaseLevelForWordInTask:_currentTask];
     }
+    [self updateLevelIndicatorLabel];
+    
+    ControlFeedbackViewController* feedback = [[ControlFeedbackViewController alloc] init];
+    feedback.delegate = self;
+    feedback.modalPresentationStyle = UIModalPresentationFormSheet;
+    feedback.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:feedback animated:YES completion:nil];
+    
+    feedback.view.superview.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    feedback.view.superview.bounds = CGRectMake(0, 0, 400, 500);
     
     CGFloat ave = 0.0;
     for(int i = 0; i < [_speedRecords count];i++){
@@ -272,6 +273,7 @@
      memoryAccuracy:0.0
      andSpanLevel: [ControlGroupViewController getTaskLevel:_currentTask]];
     [[LoggingSingleton sharedSingleton] writeBufferToFile];
+    
 }
 -(void)buttonPressed:(BOOL)wasTrue {
     if(_hasPressedButton) return;
@@ -299,6 +301,10 @@
     wrong.hidden = YES;
     right.hidden = YES;
 }
+-(void)updateLevelIndicatorLabel{
+    NSLog(@"changed level indicator %d", [ControlGroupViewController getTaskLevel:_currentTask]);
+    levelIndicatorLabel.text = [NSString stringWithFormat:@"%d", [ControlGroupViewController getTaskLevel:_currentTask] ];
+}
 
 
 
@@ -313,6 +319,31 @@
         [array exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
     return array;
+}
++(bool)checkHighScoreByLevel:(NSInteger)level andTask:(NSString*)task{
+    NSInteger high;
+    if([task isEqualToString: category]){
+        high = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_HIGHSCORE_INT];
+    }
+    if([task isEqualToString: decision]){
+        high = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_HIGHSCORE_INT];
+    }
+    if([task isEqualToString: sentence]){
+        high = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_HIGHSCORE_INT];
+    }
+    if (level <= high){
+        return false;
+    }
+    if([task isEqualToString: category]){
+        [[NSUserDefaults standardUserDefaults] setInteger:level forKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_HIGHSCORE_INT];
+    }
+    if([task isEqualToString: decision]){
+        [[NSUserDefaults standardUserDefaults] setInteger:level forKey:CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_HIGHSCORE_INT];
+    }
+    if([task isEqualToString: sentence]){
+        [[NSUserDefaults standardUserDefaults] setInteger:level forKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_HIGHSCORE_INT];
+    }
+    return true;
 }
 +(NSTimeInterval)getTimeForWordInTask:(NSString*)task{
     NSInteger level;
@@ -366,7 +397,6 @@
         level = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT] + 1;
         [[NSUserDefaults standardUserDefaults] setInteger:level forKey:CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT];
     }
-    
 }
 +(void)decreaseLevelForWordInTask:(NSString*)task{
     NSInteger level = [ControlGroupViewController getTaskLevel:task];
@@ -402,7 +432,12 @@
         ave = ave - [(NSNumber*)[_speedRecords objectAtIndex:i] floatValue];
     }
     ave = ave / [_speedRecords count];
-    [sender setupFieldsWithNumCorrect:_totalCorrect numIncorrect:_numWords averageTime:ave andAllowedTime:_timePerWord];
+    NSLog(@"Delegate called");
+    [sender setupFieldsWithNumCorrect:_totalCorrect numIncorrect:_numWords averageTime:ave allowedTime:_timePerWord levelAchieved:[ControlGroupViewController getTaskLevel:_currentTask]];
+    
+    if([ControlGroupViewController checkHighScoreByLevel:[ControlGroupViewController getTaskLevel:_currentTask] andTask:_currentTask]){
+        [sender recognizeHighScore];
+    }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

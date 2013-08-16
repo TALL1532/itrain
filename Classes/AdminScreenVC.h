@@ -26,6 +26,9 @@
 #define CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_INT @"k_control_group_level_dec"
 #define CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_INT @"k_control_group_level_sentence"
 
+#define CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_HIGHSCORE_INT @"k_control_group_level_highscore_category"
+#define CONTROL_GROUP_DECISION_DIFFICULTY_LEVEL_HIGHSCORE_INT @"k_control_group_level_highscore_dec"
+#define CONTROL_GROUP_SENTENCE_DIFFICULTY_LEVEL_HIGHSCORE_INT @"k_control_group_level_highscore_sentence"
 
 
 

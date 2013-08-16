@@ -16,4 +16,5 @@ Futon
 Armoire
 Bookshelf
 Bookcase
-CabinetsShelves
+Cabinets
+Shelves

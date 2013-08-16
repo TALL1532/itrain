@@ -42,6 +42,7 @@
     IBOutlet UIView* countDown;
     IBOutlet UILabel* content;
     IBOutlet UILabel* categoryLabel;
+    IBOutlet UILabel* levelIndicatorLabel;
     IBOutlet UIButton* yesButton;
     IBOutlet UIButton* noButton;
     IBOutlet UIImageView* wrong;
@@ -55,6 +56,6 @@
 +(NSInteger)getTaskLevel:(NSString*)task;
 +(void)increaseLevelForWordInTask:(NSString*)task;
 +(void)decreaseLevelForWordInTask:(NSString*)task;
-
++(bool)checkHighScoreByLevel:(NSInteger)level andTask:(NSString*)task;
 @end
 
