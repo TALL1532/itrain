@@ -11,4 +11,5 @@
 @protocol ProperDataProtocol <NSObject>
 - (int) getMaxWords;
 - (int) getMinWords;
+- (void) checkDoneForToday;
 @end

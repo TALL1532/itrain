@@ -166,6 +166,7 @@
 - (void)launchCategoryGame {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:CONTROL_GROUP_ON_BOOL]){
         ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
+        [vc setDelegate:self];
         
         [self presentViewController:vc animated:NO completion:^{
             [vc startTask:category];
@@ -192,6 +193,7 @@
 - (void)launchDecisionGame {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:CONTROL_GROUP_ON_BOOL]){
         ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
+        [vc setDelegate:self];
         
         [self presentViewController:vc animated:NO completion:^{
             [vc startTask:decision];
@@ -214,6 +216,7 @@
 - (void)launchSentencesGame; {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:CONTROL_GROUP_ON_BOOL]){
         ControlGroupViewController* vc = [[ControlGroupViewController alloc] initWithNibName:@"ControlGroupViewController" bundle:nil];
+        [vc setDelegate:self];
         
         [self presentViewController:vc animated:NO completion:^{
             [vc startTask:sentence];

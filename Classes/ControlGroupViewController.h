@@ -48,14 +48,17 @@
     IBOutlet UIImageView* wrong;
     IBOutlet UIImageView* right;
 }
+
+@property (nonatomic, retain) id <ProperDataProtocol> delegate;
+
 - (void)startTask:(NSString*)task;
 - (IBAction)yesPressed:(id)sender;
 - (IBAction)noPressed:(id)sender;
-+(NSMutableArray*)shuffle:(NSMutableArray*)array;
-+(NSTimeInterval)getTimeForWordInTask:(NSString*)task;
-+(NSInteger)getTaskLevel:(NSString*)task;
-+(void)increaseLevelForWordInTask:(NSString*)task;
-+(void)decreaseLevelForWordInTask:(NSString*)task;
-+(bool)checkHighScoreByLevel:(NSInteger)level andTask:(NSString*)task;
++ (NSMutableArray*)shuffle:(NSMutableArray*)array;
++ (NSTimeInterval)getTimeForWordInTask:(NSString*)task;
++ (NSInteger)getTaskLevel:(NSString*)task;
++ (void)increaseLevelForWordInTask:(NSString*)task;
++ (void)decreaseLevelForWordInTask:(NSString*)task;
++ (bool)checkHighScoreByLevel:(NSInteger)level andTask:(NSString*)task;
 @end
 

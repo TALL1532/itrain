@@ -188,12 +188,7 @@
 - (void)nextRound {
     _totalCorrect = 0;
     if( [[_startTime dateByAddingTimeInterval:_timeForTask] timeIntervalSinceNow] < 0){
-        UIAlertView* done = [[UIAlertView alloc] initWithTitle:@"Task Complete!" message:@"press okay to continue"
-                                                     delegate:nil
-                                            cancelButtonTitle:@"OK"
-                                            otherButtonTitles:nil];
-        [done show];
-        [done release];
+        [self.delegate checkDoneForToday];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     else{
