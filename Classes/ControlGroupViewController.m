@@ -18,7 +18,7 @@
     instructions.delegate = self;
     instructions.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:instructions animated:YES completion:nil];
-    NSString *instructionsPath;
+    NSString *instructionsPath = @"nothing :(";
 
     if([task isEqualToString: category]){
         instructionsPath = [[NSBundle mainBundle] pathForResource:@"controlGroupInstructionsCategory" ofType:@"txt"];
@@ -28,7 +28,6 @@
     }
     if([task isEqualToString: sentence]){
         instructionsPath = [[NSBundle mainBundle] pathForResource:@"controlGroupInstructionsSentence" ofType:@"txt"];
-
     }
 	NSString *instructionsText = [NSString stringWithContentsOfFile:instructionsPath
 													   encoding:NSUTF8StringEncoding
@@ -47,7 +46,7 @@
         [truthArray addObject:[NSNumber numberWithBool: arc4random()%2 ? YES : NO]];
     }
     _inCategroyTrack = [ControlGroupViewController shuffle:truthArray];
-    
+    truthArray = nil;
     
     if([task isEqualToString:category]){
         int categoryNumber = [CategoryControllerVC chooseCategory];
@@ -93,7 +92,7 @@
             }while ([wordsArray indexOfObject:wordToAdd] != NSNotFound);
             [wordsArray addObject:wordToAdd];
         }
-        return wordsArray;
+        return [wordsArray autorelease];
     }
     else if([task isEqualToString:decision]){
         NSString *realWordsPath = [[NSBundle mainBundle] pathForResource:@"decisionWords" ofType:@"txt"];
@@ -132,7 +131,7 @@
             }while ([wordsArray indexOfObject:wordToAdd] != NSNotFound);
             [wordsArray addObject:wordToAdd];
         }
-        return wordsArray;
+        return [wordsArray autorelease];
     }
     else if([task isEqualToString:sentence]){
         NSString *truePath = [[NSBundle mainBundle] pathForResource:@"trueSentences" ofType:@"txt"];
@@ -164,7 +163,7 @@
             }while ([sentanceArray indexOfObject:sentenceToAdd] != NSNotFound);
             [sentanceArray addObject:sentenceToAdd];
         }
-        return sentanceArray;
+        return [sentanceArray autorelease];
     }
     else{
         [NSException raise:NSInvalidArgumentException format:@"task must be one of the three"];
@@ -198,7 +197,9 @@
         _speedRecords = nil;
         _speedRecords = [[NSMutableArray alloc] init];
         [self showButtons];
-        _wordTrack = [self generateContentFor:_currentTask];
+        [_wordTrack release];
+        _wordTrack = nil;
+        _wordTrack = [[self generateContentFor:_currentTask] retain];
         
         _timePerWord = [ControlGroupViewController getTimeForWordInTask:_currentTask];
 
@@ -268,7 +269,7 @@
      memoryAccuracy:0.0
      andSpanLevel: [ControlGroupViewController getTaskLevel:_currentTask]];
     [[LoggingSingleton sharedSingleton] writeBufferToFile];
-    
+    [date_formatter release];
 }
 -(void)buttonPressed:(BOOL)wasTrue {
     if(_hasPressedButton) return;
@@ -316,7 +317,7 @@
     return array;
 }
 +(bool)checkHighScoreByLevel:(NSInteger)level andTask:(NSString*)task{
-    NSInteger high;
+    NSInteger high = 0;
     if([task isEqualToString: category]){
         high = [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_CATEGROY_DIFFICULTY_LEVEL_HIGHSCORE_INT];
     }
@@ -450,6 +451,12 @@
     [self hideButtons];
     content.font = [UIFont systemFontOfSize:50];
     content.textAlignment = NSTextAlignmentCenter;
+    
+    [_wordTrack release];
+    _wordTrack = nil;
+    
+    [_speedRecords release];
+    _speedRecords = nil;
 }
 
 - (void)didReceiveMemoryWarning
