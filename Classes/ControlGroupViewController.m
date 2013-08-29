@@ -273,6 +273,7 @@
 }
 -(void)buttonPressed:(BOOL)wasTrue {
     if(_hasPressedButton) return;
+    _hasPressedButton = YES;
     NSNumber* time = [NSNumber numberWithDouble:[revealTime timeIntervalSinceNow]];
     [revealTime release];
     revealTime = nil;
@@ -286,7 +287,6 @@
     [self hideButtons];
 }
 -(void)hideButtons{
-    _hasPressedButton = YES;
     yesButton.hidden = YES;
     noButton.hidden = YES;
 }
