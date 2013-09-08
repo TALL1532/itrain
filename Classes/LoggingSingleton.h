@@ -32,7 +32,7 @@
                    itemPresented:(NSString*)itemPresented
                              cat:(NSString*)currentCategory
                       inCategory:(BOOL)isInCat
-                      wasCorrect:(BOOL)acc
+                      wasCorrect:(int)acc
                     reactionTime:(NSInteger)reactionTime
                     andSpanLevel:(NSInteger)spanLevel;
 

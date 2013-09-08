@@ -231,23 +231,26 @@
     }];
 }
 -(void)timerUp:(id)sender{
-    NSDateFormatter *date_formatter=[[NSDateFormatter alloc] init];
-	[date_formatter setDateFormat:@"MM.dd.yyyy - HH:mm:ss.SSS "];
-    [[LoggingSingleton sharedSingleton] storeControlDataWithName:[LoggingSingleton getSubjectName]
-                                                            task: _currentTask
-                                                   sessionNumber: [LoggingSingleton getSessionNumber]
-                                                            date: [date_formatter stringFromDate:[NSDate date]]
-                                                           trial: _currentTrial
-                                                           block: _currentBlock
-                                                   itemPresented: content.text
-                                                             cat: categoryLabel.text
-                                                      inCategory: [(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue]
-                                                      wasCorrect: ([(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue] == _lastButtonPress)
-                                                    reactionTime: -_lastTimeInterval*1000
-                                                    andSpanLevel: [ControlGroupViewController getTaskLevel:_currentTask]];
-    
-    [date_formatter release];
-    [self nextWord];
+    if(!_hasPressedButton){
+        NSDateFormatter *date_formatter=[[NSDateFormatter alloc] init];
+        [date_formatter setDateFormat:@"MM.dd.yyyy - HH:mm:ss.SSS "];
+        [[LoggingSingleton sharedSingleton] storeControlDataWithName:[LoggingSingleton getSubjectName]
+                                                                task: _currentTask
+                                                       sessionNumber: [LoggingSingleton getSessionNumber]
+                                                                date: [date_formatter stringFromDate:[NSDate date]]
+                                                               trial: _currentTrial
+                                                               block: _currentBlock
+                                                       itemPresented: content.text
+                                                                 cat: categoryLabel.text
+                                                          inCategory: [(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue]
+                                                          wasCorrect: 2 //<- means that wasnt answered
+                                                        reactionTime: _timePerWord
+                                                        andSpanLevel: [ControlGroupViewController getTaskLevel:_currentTask]];
+        
+        [date_formatter release];
+        date_formatter = nil;
+    }
+        [self nextWord];
 }
 -(void)showScoreScreen{
     if( _totalCorrect >= [[NSUserDefaults standardUserDefaults] integerForKey:CONTROL_GROUP_NUM_NEEDED_TO_ADVANCE_INT]){
@@ -291,14 +294,10 @@
     _currentTrial = 1;
 }
 -(void)buttonPressed:(BOOL)value {
-    _lastButtonPress = value;
     if(_hasPressedButton) return;
     _hasPressedButton = YES;
-    _lastTimeInterval = [revealTime timeIntervalSinceNow];
-    NSNumber* time = [NSNumber numberWithDouble:[revealTime timeIntervalSinceNow]];
-    [revealTime release];
-    revealTime = nil;
-    [_speedRecords addObject:time];
+    [self hideButtons];
+    
     if([(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue] == value){
         _totalCorrect++;
         right.hidden = NO;
@@ -306,8 +305,30 @@
         wrong.hidden = NO;
     }
     
+    NSNumber* time = [NSNumber numberWithDouble:[revealTime timeIntervalSinceNow]];
     
-    [self hideButtons];
+    [_speedRecords addObject:time];
+    
+    NSDateFormatter *date_formatter=[[NSDateFormatter alloc] init];
+	[date_formatter setDateFormat:@"MM.dd.yyyy - HH:mm:ss.SSS "];
+    [[LoggingSingleton sharedSingleton] storeControlDataWithName:[LoggingSingleton getSubjectName]
+                                                            task: _currentTask
+                                                   sessionNumber: [LoggingSingleton getSessionNumber]
+                                                            date: [date_formatter stringFromDate:[NSDate date]]
+                                                           trial: _currentTrial
+                                                           block: _currentBlock
+                                                   itemPresented: content.text
+                                                             cat: categoryLabel.text
+                                                      inCategory: [(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue]
+                                                      wasCorrect: (([(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue] == value) ? 1 : 0)
+                                                    reactionTime: -[revealTime timeIntervalSinceNow]*1000
+                                                    andSpanLevel: [ControlGroupViewController getTaskLevel:_currentTask]];
+    
+    [date_formatter release];
+    date_formatter = nil;
+    [revealTime release];
+    revealTime = nil;
+    
 }
 -(void)hideButtons{
     yesButton.hidden = YES;

@@ -38,13 +38,9 @@
     NSTimeInterval _timePerWord;
     
     BOOL _hasPressedButton;
-    BOOL _lastButtonPress;
-    
-    double _lastTimeInterval;
-    
+        
     NSTimeInterval _timeForTask;
     NSDate * _startTime;
-    
     
     
     IBOutlet UIView* countDown;

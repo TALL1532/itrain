@@ -51,7 +51,7 @@
                  itemPresented:(NSString*)itemPresented
                            cat:(NSString*)currentCategory
                     inCategory:(BOOL)isInCat
-                    wasCorrect:(BOOL)acc
+                    wasCorrect:(int)acc
                   reactionTime:(NSInteger)reactionTime
                   andSpanLevel:(NSInteger)spanLevel{
     NSString* category;
@@ -63,8 +63,16 @@
     
     NSCharacterSet *doNotWant = [NSCharacterSet characterSetWithCharactersInString:@",."];
     NSString * s = [[itemPresented componentsSeparatedByCharactersInSet: doNotWant] componentsJoinedByString: @""];
+    NSString * acc_content;
+    if(acc == 0){
+        acc_content = @"True";
+    }else if(acc == 1){
+        acc_content = @"False";
+    }else{
+        acc_content = @"N/A";
+    }
 
-    NSString* nextLine = [NSString stringWithFormat:@"%@,%@,%d,%@,%d,%d,%@,%@,%@,%d,%d,%@ \n",name, task, sessionNum, date, trialNum, block, s,  (isInCat ? @"YES" : @"NO") ,category, reactionTime ,spanLevel, (acc ? @"True" : @"False")];
+    NSString* nextLine = [NSString stringWithFormat:@"%@,%@,%d,%@,%d,%d,%@,%@,%@,%d,%d,%@ \n",name, task, sessionNum, date, trialNum, block, s,  (isInCat ? @"YES" : @"NO") ,category, reactionTime ,spanLevel,acc_content];
     NSLog(@"%@",nextLine);
     self.loggingStringWriteBuffer = [self.loggingStringWriteBuffer stringByAppendingString:nextLine];
 }

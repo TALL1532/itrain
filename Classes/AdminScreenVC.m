@@ -343,6 +343,10 @@
     NSError * error;
     if ([fileMgr removeItemAtPath:[NSString stringWithFormat:@"%@/%@",[self applicationDocumentsDirectory],@"record.csv"] error:&error] != YES)
         NSLog(@"Unable to delete file: %@", [error localizedDescription]);
+    
+    if ([fileMgr removeItemAtPath:[NSString stringWithFormat:@"%@/%@",[self applicationDocumentsDirectory],@"control_logs.csv"] error:&error] != YES)
+        NSLog(@"Unable to delete file: %@", [error localizedDescription]);
+    
     [fileMgr release];
     fileMgr = nil;
     
