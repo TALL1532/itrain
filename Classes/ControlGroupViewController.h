@@ -19,24 +19,32 @@
 #import "FeedbackDelegate.h"
 #import "ModalInstructionsViewController.h"
 #import "LoggingSingleton.h"
+
 @interface ControlGroupViewController : UIViewController <FeedbackDelegate, ModalInstructionControlGroup> {
     NSMutableArray* _inCategroyTrack;
     NSMutableArray* _wordTrack;
     NSInteger _numWords;
     NSString* _currentTask;
     
-    int _currentWord;
+    NSInteger _currentWord;
+    NSInteger _currentBlock;
+    NSInteger _currentTrial;
+    
     
     NSMutableArray* _speedRecords;
-    int _totalCorrect;
+    NSInteger _totalCorrect;
     
     NSDate* revealTime;
     NSTimeInterval _timePerWord;
     
     BOOL _hasPressedButton;
+    BOOL _lastButtonPress;
+    
+    double _lastTimeInterval;
     
     NSTimeInterval _timeForTask;
     NSDate * _startTime;
+    
     
     
     IBOutlet UIView* countDown;
@@ -60,5 +68,6 @@
 + (void)increaseLevelForWordInTask:(NSString*)task;
 + (void)decreaseLevelForWordInTask:(NSString*)task;
 + (bool)checkHighScoreByLevel:(NSInteger)level andTask:(NSString*)task;
+
 @end
 

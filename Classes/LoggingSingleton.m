@@ -21,7 +21,7 @@
 }
 
 - (void)storeTrialDataWithName:(NSString*)name task:(NSString*)task sessionNumber:(NSInteger)sessionNum date:(NSString*)date trial:(NSInteger)trialNum taskAccuracy:(CGFloat)taskAccuracy averageReactionTime:(NSInteger)reactionTime memoryAccuracy:(CGFloat)memoryAccuracy andSpanLevel:(NSInteger)spanLevel{
-    if(taskAccuracy ==0){
+    if(taskAccuracy == 0){
         taskAccuracy = 0;
     }
     if(reactionTime ==0){
@@ -40,14 +40,45 @@
     
     NSString* nextLine = [NSString stringWithFormat:@"%@,%@,%d,%@,%d,%f,%d,%f,%d \n",name,task,sessionNum, date,trialNum, taskAccuracy,reactionTime,memoryAccuracy, spanLevel];
     NSLog(@"%@",nextLine);
-    self.stringWriteBuffer = [self.stringWriteBuffer stringByAppendingString:nextLine];
+    self.recordsStringWriteBuffer = [self.recordsStringWriteBuffer stringByAppendingString:nextLine];
+}
+- (void)storeControlDataWithName:(NSString*)name
+                          task:(NSString*)task
+                 sessionNumber:(NSInteger)sessionNum
+                          date:(NSString*)date
+                         trial:(NSInteger)trialNum
+                         block:(NSInteger)block
+                 itemPresented:(NSString*)itemPresented
+                           cat:(NSString*)currentCategory
+                    inCategory:(BOOL)isInCat
+                    wasCorrect:(BOOL)acc
+                  reactionTime:(NSInteger)reactionTime
+                  andSpanLevel:(NSInteger)spanLevel{
+    NSString* category;
+    if([currentCategory isEqualToString:@""]){
+        category = task;
+    }else{
+        category = currentCategory;
+    }
+    
+    NSCharacterSet *doNotWant = [NSCharacterSet characterSetWithCharactersInString:@",."];
+    NSString * s = [[itemPresented componentsSeparatedByCharactersInSet: doNotWant] componentsJoinedByString: @""];
+
+    NSString* nextLine = [NSString stringWithFormat:@"%@,%@,%d,%@,%d,%d,%@,%@,%@,%d,%d,%@ \n",name, task, sessionNum, date, trialNum, block, s,  (isInCat ? @"YES" : @"NO") ,category, reactionTime ,spanLevel, (acc ? @"True" : @"False")];
+    NSLog(@"%@",nextLine);
+    self.loggingStringWriteBuffer = [self.loggingStringWriteBuffer stringByAppendingString:nextLine];
 }
 
 -(void)writeBufferToFile{
-    NSLog(@"writing buffer to file: %@ \n",self.stringWriteBuffer);
-    [self writeToEndOfFile:self.stringWriteBuffer withFilename:@"record.csv"];
-    self.stringWriteBuffer = @"";
+    //NSLog(@"writing buffer to file: %@ \n",self.recordsStringWriteBuffer);
+    [self writeToEndOfFile:self.recordsStringWriteBuffer withFilename:@"record.csv"];
+    self.recordsStringWriteBuffer = @"";
+    
+    //NSLog(@"writing buffer to file: %@ \n",self.recordsStringWriteBuffer);
+    [self writeToEndOfFile:self.loggingStringWriteBuffer withFilename:@"control_logs.csv"];
+    self.loggingStringWriteBuffer = @"";
 }
+
 - (void)writeToEndOfFile:(NSString*)string withFilename:(NSString*)filename{
     if(string == nil || [string length] == 0) return;
     // NSFileHandle won't create the file for us, so we need to check to make sure it exists
@@ -60,6 +91,9 @@
         // NSString convenience method
         
         NSError *error = nil;
+        if([filename isEqualToString:@"control_logs.csv"]){
+            string = [NSString stringWithFormat:@"%@%@",CONTROL_HEADER,string];
+        }
         BOOL success = [string writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:&error];
         if (!success) {
             // handle the error

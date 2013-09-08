@@ -185,6 +185,7 @@
     
 }
 - (void)nextRound {
+    _currentTrial ++;
     _totalCorrect = 0;
     if( [[_startTime dateByAddingTimeInterval:_timeForTask] timeIntervalSinceNow] < 0){
         [self.delegate checkDoneForToday];
@@ -230,6 +231,22 @@
     }];
 }
 -(void)timerUp:(id)sender{
+    NSDateFormatter *date_formatter=[[NSDateFormatter alloc] init];
+	[date_formatter setDateFormat:@"MM.dd.yyyy - HH:mm:ss.SSS "];
+    [[LoggingSingleton sharedSingleton] storeControlDataWithName:[LoggingSingleton getSubjectName]
+                                                            task: _currentTask
+                                                   sessionNumber: [LoggingSingleton getSessionNumber]
+                                                            date: [date_formatter stringFromDate:[NSDate date]]
+                                                           trial: _currentTrial
+                                                           block: _currentBlock
+                                                   itemPresented: content.text
+                                                             cat: categoryLabel.text
+                                                      inCategory: [(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue]
+                                                      wasCorrect: ([(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue] == _lastButtonPress)
+                                                    reactionTime: -_lastTimeInterval*1000
+                                                    andSpanLevel: [ControlGroupViewController getTaskLevel:_currentTask]];
+    
+    [date_formatter release];
     [self nextWord];
 }
 -(void)showScoreScreen{
@@ -270,20 +287,26 @@
      andSpanLevel: [ControlGroupViewController getTaskLevel:_currentTask]];
     [[LoggingSingleton sharedSingleton] writeBufferToFile];
     [date_formatter release];
+    _currentBlock++;
+    _currentTrial = 1;
 }
--(void)buttonPressed:(BOOL)wasTrue {
+-(void)buttonPressed:(BOOL)value {
+    _lastButtonPress = value;
     if(_hasPressedButton) return;
     _hasPressedButton = YES;
+    _lastTimeInterval = [revealTime timeIntervalSinceNow];
     NSNumber* time = [NSNumber numberWithDouble:[revealTime timeIntervalSinceNow]];
     [revealTime release];
     revealTime = nil;
     [_speedRecords addObject:time];
-    if([(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue] == wasTrue){
+    if([(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue] == value){
         _totalCorrect++;
         right.hidden = NO;
     }else{
         wrong.hidden = NO;
     }
+    
+    
     [self hideButtons];
 }
 -(void)hideButtons{
@@ -457,6 +480,9 @@
     
     [_speedRecords release];
     _speedRecords = nil;
+    
+    _currentBlock = 0;
+    _currentTrial = 0;
 }
 
 - (void)didReceiveMemoryWarning

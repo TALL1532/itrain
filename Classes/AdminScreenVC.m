@@ -46,13 +46,22 @@
 	NSArray *toRecipients = [NSArray arrayWithObject:@"AdultLearningLab.ipad@gmail.com"];
 	[picker setToRecipients:toRecipients];
 	
-	// Attach log to the email
+	// Attach Records spreadsheet to the email
     
     NSString* path = [NSString stringWithFormat:@"%@/%@",[self applicationDocumentsDirectory],@"record.csv"];
 
 	NSData *myData = [NSData dataWithContentsOfFile:path];
+    
 	[picker addAttachmentData:myData mimeType:@"text/plain" fileName:[NSString stringWithFormat:@"records-%@.csv",[LoggingSingleton getSubjectName]]];
+    
+    //Logs Spreadsheet
 	
+    path = [NSString stringWithFormat:@"%@/%@",[self applicationDocumentsDirectory],@"control_logs.csv"];
+    
+	myData = [NSData dataWithContentsOfFile:path];
+    
+	[picker addAttachmentData:myData mimeType:@"text/plain" fileName:[NSString stringWithFormat:@"control_logs-%@.csv",[LoggingSingleton getSubjectName]]];
+    
 	// Fill out the email body text
 	NSString *emailBody = @"Log file attached.";
 	[picker setMessageBody:emailBody isHTML:NO];
