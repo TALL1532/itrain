@@ -185,7 +185,7 @@
     
 }
 - (void)nextRound {
-    _currentTrial ++;
+    _currentBlock ++;
     _totalCorrect = 0;
     if( [[_startTime dateByAddingTimeInterval:_timeForTask] timeIntervalSinceNow] < 0){
         [self.delegate checkDoneForToday];
@@ -208,6 +208,7 @@
     }
 }
 -(void)nextWord{
+    _currentTrial ++;
     [self showButtons];
     if(_currentWord == _numWords) {
         [self hideButtons];
@@ -290,7 +291,6 @@
      andSpanLevel: [ControlGroupViewController getTaskLevel:_currentTask]];
     [[LoggingSingleton sharedSingleton] writeBufferToFile];
     [date_formatter release];
-    _currentBlock++;
     _currentTrial = 1;
 }
 -(void)buttonPressed:(BOOL)value {
@@ -320,7 +320,7 @@
                                                    itemPresented: content.text
                                                              cat: categoryLabel.text
                                                       inCategory: [(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue]
-                                                      wasCorrect: (([(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue] == value) ? 1 : 0)
+                                                      wasCorrect: (([(NSNumber*)[_inCategroyTrack objectAtIndex:_currentWord-1] boolValue] == value) ? 0 : 1)
                                                     reactionTime: -[revealTime timeIntervalSinceNow]*1000
                                                     andSpanLevel: [ControlGroupViewController getTaskLevel:_currentTask]];
     
