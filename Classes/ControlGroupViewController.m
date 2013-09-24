@@ -79,8 +79,13 @@
         
         NSMutableArray* wordsArray = [[NSMutableArray alloc] init];
         
+        BOOL repeatsAllowed = NO;
+        NSInteger numInCat = 0;
+
         for (int i=0; i<_numWords; i++) {
             BOOL categoryDecider = [(NSNumber*)[_inCategroyTrack objectAtIndex:i] boolValue];
+            if(categoryDecider) numInCat++;
+            if(numInCat >= [inCategory count]-1) repeatsAllowed = YES;
             NSString *wordToAdd;
             do{
                 if(categoryDecider){
@@ -89,7 +94,7 @@
                 else{
                     wordToAdd = [notInCategory objectAtIndex:arc4random()%[notInCategory count]];
                 }
-            }while ([wordsArray indexOfObject:wordToAdd] != NSNotFound);
+            }while (!repeatsAllowed && [wordsArray indexOfObject:wordToAdd] != NSNotFound);
             [wordsArray addObject:wordToAdd];
         }
         return [wordsArray autorelease];
