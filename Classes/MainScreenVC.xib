@@ -229,7 +229,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">version 0.9.5</string>
+						<string key="IBUIText">version 1.0.0</string>
 						<reference key="IBUITextColor" ref="932359962"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>

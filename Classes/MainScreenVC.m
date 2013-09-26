@@ -453,7 +453,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.navigationItem.title = @"Memory Training";
+	self.navigationItem.title = @"iTrain";
     
 	
 	//put "Show Log" button in top right corner
