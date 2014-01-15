@@ -432,6 +432,7 @@
         randomWord = arc4random()%numWords;
         while(i < tries && [(NSNumber*)[usedWords objectAtIndex:randomWord] boolValue]){
             randomWord = arc4random()%numWords;
+            i++;
         }
         if(i == tries){
             for(int j = 0; j < numWords; j++){

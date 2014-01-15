@@ -125,6 +125,7 @@
             BOOL isWord = [(NSNumber*)[_inCategroyTrack objectAtIndex:i] boolValue];
             NSString *wordToAdd;
             do{
+                NSLog(@"Looping!");
                 if(isWord){
                     NSInteger asdf = [DecisionVC chooseUnusedWord:YES withWordCap:[realWordsArray count] andNotWordCap:[nonWordsArray count]];
                     wordToAdd = [realWordsArray objectAtIndex:asdf];
