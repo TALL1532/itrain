@@ -158,14 +158,13 @@
         for (int i=0; i<_numWords; i++) {
             BOOL makesSense = [(NSNumber*)[_inCategroyTrack objectAtIndex:i] boolValue];
             NSString *sentenceToAdd;
-            do{
-                if(makesSense){
-                    sentenceToAdd = [trueArray objectAtIndex:[SentenceVC chooseUnusedSentence:YES withRealSentenceCap:[trueArray count] andFakeSentenceCap:[falseArray count]]];
-                }
-                else{
-                    sentenceToAdd = [falseArray objectAtIndex:[SentenceVC chooseUnusedSentence:NO withRealSentenceCap:[trueArray count] andFakeSentenceCap:[falseArray count]]];
-                }
-            }while ([sentanceArray indexOfObject:sentenceToAdd] != NSNotFound);
+            if(makesSense){
+                sentenceToAdd = [trueArray objectAtIndex:[SentenceVC chooseUnusedSentence:YES withRealSentenceCap:[trueArray count] andFakeSentenceCap:[falseArray count]]];
+            }
+            else{
+                sentenceToAdd = [falseArray objectAtIndex:[SentenceVC chooseUnusedSentence:NO withRealSentenceCap:[trueArray count] andFakeSentenceCap:[falseArray count]]];
+            }
+            NSLog(@"%@",sentenceToAdd);
             [sentanceArray addObject:sentenceToAdd];
         }
         return [sentanceArray autorelease];
@@ -211,6 +210,7 @@
 
         [self nextWord];
     }
+    NSLog(@"finsihed next round.");
 }
 -(void)nextWord{
     _currentTrial ++;

@@ -313,7 +313,7 @@
 
 + (int)chooseUnusedSentence:(bool)makesSense withRealSentenceCap:(NSInteger)numRealSentence andFakeSentenceCap:(NSInteger)numFakeSentence
 {
-    //This method returns a category number between 0-49 that is an unused category which is persistent between applications cycles.
+    //This method returns a sentence index number that is an unused which is persistent between applications executions
     NSMutableArray *usedSentences = [(NSMutableArray*)[[NSUserDefaults standardUserDefaults] objectForKey:(makesSense ? @"__usedRealSentenceArray" : @"__usedFakeSentenceArray" ) ] mutableCopy];
     NSInteger numWords = (makesSense ? numRealSentence : numFakeSentence);
 	NSInteger randomSentence = arc4random()%numWords;
@@ -343,6 +343,7 @@
         randomSentence = arc4random()%numWords;
         while(i < tries && [(NSNumber*)[usedSentences objectAtIndex:randomSentence] boolValue]){
             randomSentence = arc4random()%numWords;
+            i++;
         }
         if(i == tries){
             for(int j = 0; j < numWords; j++){
