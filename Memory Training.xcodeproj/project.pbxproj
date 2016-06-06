@@ -496,7 +496,7 @@
 				LastUpgradeCheck = 0460;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = J9UF7HYE7D;
+						DevelopmentTeam = 6K24L42BXW;
 					};
 				};
 			};
@@ -652,6 +652,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Memory_Training_Prefix.pch;
 				INFOPLIST_FILE = "Memory_Training-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/TestFlightSDK1.2.6\"",
@@ -672,6 +673,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Memory_Training_Prefix.pch;
 				INFOPLIST_FILE = "Memory_Training-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/TestFlightSDK1.2.6\"",
@@ -691,7 +693,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos9.3;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -705,7 +707,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos9.3;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

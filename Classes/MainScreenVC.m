@@ -293,38 +293,42 @@
 }
 
 - (void)adminPressed {
-	//ask for password ("reading")
-	AlertPrompt *prompt = [AlertPrompt alloc];
-    prompt = [prompt initWithTitle:@"Enter Password" message:@"Password" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"Enter"];
-    [prompt show];
-    [prompt release];
-}
-
-- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex{
-    if (buttonIndex != [alertView cancelButtonIndex]) {
-        NSString *entered = [(AlertPrompt *)alertView enteredText];
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"Enter Password"
+                                                                              message: @"Password"
+                                                                       preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"password";
+        textField.textColor = [UIColor blueColor];
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+        textField.secureTextEntry = YES;
+    }];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSArray * textfields = alertController.textFields;
+        UITextField * passwordfiled = textfields[0];
+        NSString *entered = passwordfiled.text;
         NSLog(@"Password entry: %@",entered);
-		
-		
-		NSComparisonResult isPassword = [entered caseInsensitiveCompare:@"61801"];
-		
-		if (!isPassword) {
-			//push to admin screen
-			[self.navigationController pushViewController:asvc animated:NO];
-			[self logIt:@"----- Admin screen accessed"];
-		}
-		else {
-			UIAlertView *wrongAlert = [[UIAlertView alloc] initWithTitle:nil message:@"Incorrect Password"
-																delegate:self 
-													   cancelButtonTitle:@"Cancel" 
-													   otherButtonTitles:nil]; 
-			
-			[wrongAlert show];
-			[wrongAlert release];
-			[self logIt:[NSString stringWithFormat:@"Attemped to access admin screen. Entry: %@",entered]];
-		}
-		
-    }
+        
+        
+        NSComparisonResult isPassword = [entered caseInsensitiveCompare:@"61801"];
+        
+        if (!isPassword) {
+            //push to admin screen
+            [self.navigationController pushViewController:asvc animated:NO];
+            [self logIt:@"----- Admin screen accessed"];
+        }
+        else {
+            UIAlertView *wrongAlert = [[UIAlertView alloc] initWithTitle:nil message:@"Incorrect Password"
+                                                                delegate:self
+                                                       cancelButtonTitle:@"Cancel"
+                                                       otherButtonTitles:nil];
+            
+            [wrongAlert show];
+            [wrongAlert release];
+            [self logIt:[NSString stringWithFormat:@"Attemped to access admin screen. Entry: %@",entered]];
+        }
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)recoverSession

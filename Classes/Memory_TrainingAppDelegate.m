@@ -20,12 +20,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSInteger currentSession = [[NSUserDefaults standardUserDefaults] integerForKey:@"k_sessionNumber"] +1;
     [[NSUserDefaults standardUserDefaults] setInteger:currentSession forKey:@"k_sessionNumber"];
-    vc = [[MainScreenVC alloc] initWithNibName:@"MainScreenVC" bundle:nil];
+    vc = [[MainScreenVC alloc] initWithNibName:nil bundle:nil];
+    
 	
 	
 	nav = [[UINavigationController alloc] initWithRootViewController:vc];
 	nav.navigationController.title = @"Startup Screen";
-	[[self window] addSubview:[nav view]];  
+    
+    self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
