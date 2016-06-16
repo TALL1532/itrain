@@ -217,12 +217,13 @@
 
 - (void)pushToRecall:(NSArray *)words {
 	revc = [[RecallEntryVC alloc] initWithNibName:@"RecallEntryVC" bundle:nil];
+    revc.wordsName = @"word(s)";
+    revc.fields = words;
 	[revc setDelegate:self];
 	
 	
 	NSLog(@"CategoryVC: pushVC to recall");
 	[self.navigationController pushViewController:revc animated:YES];
-	[revc createFields:words ofTypes:@"word(s)"];
 }
 
 - (void)recallEnded:(int)numCorrect withTotalWords:(int)totalWords {
@@ -230,26 +231,23 @@
 	[revc release];
 	
 	//initialize a feedback screen
-	fevc = [[FeedbackScreenVC alloc] initWithNibName:@"FeedbackScreenVC" bundle:nil];
+    //check the classifications by adding up all the ones that were correct
+    int numCorrectClass = 0; // correctChoiceTrack
+    for (int i=0; i < correctChoiceTrack.count; i++) {
+        numCorrectClass = numCorrectClass + [[correctChoiceTrack objectAtIndex:i] integerValue];
+    }
+    int numErrors = totalWords-numCorrectClass;
+
+	fevc = [[[FeedbackScreenVC alloc] initWithNibName:@"FeedbackScreenVC" bundle:nil] autorelease];
+    fevc.numCorrect = numCorrect;
+    fevc.numTotal = totalWords;
+    fevc.type = @"word(s)";
+    fevc.typeOfError = @"classification";
+    fevc.numErrors = numErrors;
 	[fevc setDelegate:self];
-	
-	//calculate results
-	NSString *typeOfNum = @"word(s)";
-	NSString *typeOfError = @"classification";
-	int numCorrectClass = 0; // correctChoiceTrack
-
-	//check the classifications by adding up all the ones that were correct
-	for (int i=0; i < correctChoiceTrack.count; i++) {
-		numCorrectClass = numCorrectClass + [[correctChoiceTrack objectAtIndex:i] integerValue];
-	}
-	int numErrors = totalWords-numCorrectClass;
-
 	
 	//push view controller to feedback screen with results
 	[self.navigationController pushViewController:fevc animated:YES];
-
-	[fevc displayResults:numCorrect withTotal:totalWords withType:typeOfNum withErrors:numErrors andErrorType:typeOfError];
-	
 }
 
 - (void)feedbackEnded:(int)nextWordCount {

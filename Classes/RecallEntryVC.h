@@ -27,11 +27,8 @@
 }
 - (IBAction)enterPressed:(id)sender;
 
-//- (void)startPuzzle:(int)words;
-- (void)createFields:(NSArray *)words ofTypes:(NSString *)type;
-
-- (void)quitPressed;
-
 @property (assign) id delegate;				//---comm
+@property (nonatomic, retain) NSArray *fields;
+@property (nonatomic, retain) NSString *wordsName;
 
 @end

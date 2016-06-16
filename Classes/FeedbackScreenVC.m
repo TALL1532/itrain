@@ -20,10 +20,10 @@
     [[self delegate] feedbackEnded:nextWordCount];
 }
 
-- (void)displayResults:(int)numCorrect withTotal:(int)numTotal withType:(NSString *)typeOfNum withErrors:(int)numErrors andErrorType:(NSString *)typeOfError{
+- (void)displayResults:(NSInteger)numCorrect withTotal:(NSInteger)numTotal withType:(NSString *)typeOfNum withErrors:(NSInteger)numErrors andErrorType:(NSString *)typeOfError{
 	//NSLog(@"FeedbackScreenVC: displayResults");
 	
-	int numTotalCorrect = numCorrect + (numTotal-numErrors);
+	NSInteger numTotalCorrect = numCorrect + (numTotal-numErrors);
 	
 	float fractionCorrect = numTotalCorrect/1.0/(numTotal*2); //divide by 1.0 to keep a float value
 	NSLog(@"fractionCorrect: %f",fractionCorrect);
@@ -47,18 +47,18 @@
 	}
 	congratsLabel.text = congrats;
 	
-	NSString *feedbackText = [NSString stringWithFormat:@"You remembered %d %@ correctly out of %d",numCorrect,typeOfNum,numTotal];
+	NSString *feedbackText = [NSString stringWithFormat:@"You remembered %ld %@ correctly out of %ld",numCorrect,typeOfNum,numTotal];
 	correctWordsView.text = feedbackText;
 	
-	int percentCorrect = fractionCorrect*100;
-	percentCorrectLabel.text = [NSString stringWithFormat:@"%d%%",percentCorrect];
+	NSInteger percentCorrect = fractionCorrect*100;
+	percentCorrectLabel.text = [NSString stringWithFormat:@"%ld%%",percentCorrect];
 	
-	NSString *classFeedbackText = [NSString stringWithFormat:@"You made %d %@ error(s) this set",numErrors,typeOfError];
+	NSString *classFeedbackText = [NSString stringWithFormat:@"You made %ld %@ error(s) this set",numErrors,typeOfError];
 	correctClassLabel.text = classFeedbackText;
 	
 	[[self delegate] logIt:@"----- Displaying results:"];
-	[[self delegate] logIt:[NSString stringWithFormat:@"----- %d/%d %@ correct",numCorrect,numTotal,typeOfNum]];
-	[[self delegate] logIt:[NSString stringWithFormat:@"----- %d %@ error(s)",numErrors,typeOfError]];
+	[[self delegate] logIt:[NSString stringWithFormat:@"----- %ld/%ld %@ correct",numCorrect,numTotal,typeOfNum]];
+	[[self delegate] logIt:[NSString stringWithFormat:@"----- %ld %@ error(s)",numErrors,typeOfError]];
     
     NSDateFormatter *date_formatter=[[NSDateFormatter alloc] init];
 	[date_formatter setDateFormat:@"MM.dd.yyyy - HH:mm:ss.SSS "];
@@ -77,17 +77,16 @@
 	self.navigationItem.title = @"Feedback Screen";
 	self.navigationItem.hidesBackButton = YES;
 	
-	// hide % label
-	//[percentCorrectLabel setHidden:YES];
+    [self displayResults:self.numCorrect withTotal:self.numTotal withType:self.type withErrors:self.numErrors andErrorType:self.typeOfError];
 }
 
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotateToNSIntegererfaceOrientation:(UIInterfaceOrientation)NSIntegererfaceOrientation {
     
 	//portrait only
-	return ((interfaceOrientation != UIDeviceOrientationLandscapeLeft) &&
-			(interfaceOrientation != UIDeviceOrientationLandscapeRight));
+	return ((NSIntegererfaceOrientation != UIDeviceOrientationLandscapeLeft) &&
+			(NSIntegererfaceOrientation != UIDeviceOrientationLandscapeRight));
 	
 }
 

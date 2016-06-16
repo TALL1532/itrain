@@ -254,42 +254,36 @@
 
 - (void)pushToRecall:(NSArray *)words {
 	revc = [[RecallEntryVC alloc] initWithNibName:@"RecallEntryVC" bundle:nil];
+    revc.wordsName = @"word(s)";
+    revc.fields = words;
 	[revc setDelegate:self];
 	
 	
 	NSLog(@"SentenceVC: pushVC to recall");
 	[self.navigationController pushViewController:revc animated:YES];
-	[revc createFields:words ofTypes:@"word(s)"];
     [revc release];
     revc = nil;
 }
 
 - (void)recallEnded:(int)numCorrect withTotalWords:(int)totalWords {
-	//NSLog(@"recallEnded. numCorrect:%d, totalWords:%d",numCorrect,totalWords);
-	
-	
-	//initialize a feedback screen
-	fevc = [[FeedbackScreenVC alloc] initWithNibName:@"FeedbackScreenVC" bundle:nil];
-	[fevc setDelegate:self];
-	
-	//push view controller to feedback screen with results
-	NSString *typeOfNum = @"word(s)";
-	NSString *typeOfError = @"true/false";
-	int numCorrectClass = 0; // correctChoiceTrack
-	
-	//check the classifications by adding up all the ones that were correct
-	for (int i=0; i < correctChoiceTrack.count; i++) {
-		numCorrectClass = numCorrectClass + [[correctChoiceTrack objectAtIndex:i] integerValue];
-	}
-	int numErrors = totalWords-numCorrectClass;
-	
-	
-	//NSLog(@"CategoryVC: pushVC to feedback");
-	[self.navigationController pushViewController:fevc animated:YES];
-	//NSLog(@"about to display results");
-	[fevc displayResults:numCorrect withTotal:totalWords withType:typeOfNum withErrors:numErrors andErrorType:typeOfError];
-	[fevc release];
-    fevc = nil;
+    //initialize a feedback screen
+    //check the classifications by adding up all the ones that were correct
+    int numCorrectClass = 0; // correctChoiceTrack
+    for (int i=0; i < correctChoiceTrack.count; i++) {
+        numCorrectClass = numCorrectClass + [[correctChoiceTrack objectAtIndex:i] integerValue];
+    }
+    int numErrors = totalWords-numCorrectClass;
+    
+    fevc = [[[FeedbackScreenVC alloc] initWithNibName:@"FeedbackScreenVC" bundle:nil] autorelease];
+    fevc.numCorrect = numCorrect;
+    fevc.numTotal = totalWords;
+    fevc.type =  @"word(s)";
+    fevc.typeOfError = @"true/false";
+    fevc.numErrors = numErrors;
+    [fevc setDelegate:self];
+    
+    //push view controller to feedback screen with results
+    [self.navigationController pushViewController:fevc animated:YES];
 }
 
 - (void)feedbackEnded:(int)nextWordCount {

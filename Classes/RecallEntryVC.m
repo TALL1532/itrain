@@ -45,23 +45,8 @@
 	[[self delegate] recallEnded:rightAnswers withTotalWords:textFieldArray.count];
 }
 
-/*
-- (void)startPuzzle:(int)words {
-	numWords = words;
-	//[self createFields:numWords];
-	
-}
-*/
-- (void)createFields:(NSArray *)words ofTypes:(NSString *)types {
-	numWords = words.count;
-	correctAnswersArray = [[NSArray alloc] initWithArray:words];
-	
-	instructionsView.text = [NSString stringWithFormat:@"Now enter the %@ in the order they appeared.",types];
-	
-	int numFields = words.count;
-	NSLog(@"creating %d fields",numFields);
-	
-	//CGRectMake(x, y, width, height)
+- (void)createFields {
+	instructionsView.text = [NSString stringWithFormat:@"Now enter the %@ in the order they appeared.", self.wordsName];
 	
 	CGFloat yPos;
 	UITextField *textField;
@@ -71,8 +56,8 @@
 	
 	textFieldArray = [[NSMutableArray alloc] init];
 	
-    entryScrollView.contentSize = CGSizeMake(entryScrollView.frame.size.width, numFields*90 + 30);
-	for (int i = 0; i<numFields; i++) {
+    entryScrollView.contentSize = CGSizeMake(entryScrollView.frame.size.width, self.fields.count*90 + 30);
+	for (int i = 0; i< self.fields.count; i++) {
 		
 		//get the y position for this button and label
 		yPos = 20+i*90;
@@ -99,16 +84,10 @@
 		label.backgroundColor = [UIColor colorWithRed:255/255.0 green:224/255.0 blue:155/255.0 alpha:0.0];
 		[entryScrollView addSubview:label];
 		[label release];
+        
 	}
+    
 	[[self delegate] logIt:@"----- Showing recall screen"];
-}
-
-
-- (void)quitPressed {
-	
-	[self.navigationController popViewControllerAnimated:NO];
-	//[[self delegate] recallEnded:0:-1];
-	[[self delegate] quitPressed];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -124,25 +103,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	/*self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc]
-											   initWithTitle:@"QUIT" 
-											   style:UIBarButtonItemStylePlain
-											   target:self
-											   action:@selector(quitPressed)] autorelease];*/
-	
 	self.navigationItem.hidesBackButton = YES;
 	self.navigationItem.title = @"End Of Set";
 	
-	//numWords = 0;
+    [self createFields];
 }
 
 
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    
-	//portrait only
+    //portrait only
 	return ((interfaceOrientation != UIDeviceOrientationLandscapeLeft) &&
 			(interfaceOrientation != UIDeviceOrientationLandscapeRight));
 	

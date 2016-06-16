@@ -38,13 +38,6 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nice Job!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="13">
-                    <rect key="frame" x="20" y="42" width="728" height="134"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="115"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </label>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="You recalled X [words] correctly out of Y" id="15">
                     <rect key="frame" x="20" y="220" width="728" height="258"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -59,6 +52,13 @@
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="58"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nice Job!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="13">
+                    <rect key="frame" x="19" y="78" width="728" height="134"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="115"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.55000000000000004" colorSpace="calibratedRGB"/>
         </view>

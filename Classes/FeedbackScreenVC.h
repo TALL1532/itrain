@@ -21,14 +21,18 @@
     IBOutlet UILabel *percentCorrectLabel;
     IBOutlet UIButton *readyForNextButton;
 	
-	int nextWordCount;
+	NSInteger nextWordCount;
 	
 	id <ProcessDataDelegate4> delegate;		//---comm
 }
 - (IBAction)readyForNextPressed:(id)sender;
 
-- (void)displayResults:(int)numCorrect withTotal:(int)numTotal withType:(NSString *)typeOfNum withErrors:(int)numErrors andErrorType:(NSString *)typeOfError;
-
 @property (assign) id delegate;				//---comm
+
+@property (nonatomic, assign) NSInteger numCorrect;
+@property (nonatomic, assign) NSInteger numTotal;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, assign) NSInteger numErrors;
+@property (nonatomic, retain) NSString *typeOfError;
 
 @end

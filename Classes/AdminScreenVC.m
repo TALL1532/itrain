@@ -60,8 +60,10 @@
     
 	myData = [NSData dataWithContentsOfFile:path];
     
-	[picker addAttachmentData:myData mimeType:@"text/plain" fileName:[NSString stringWithFormat:@"control_logs-%@.csv",[LoggingSingleton getSubjectName]]];
-    
+    if (myData != nil) {
+        [picker addAttachmentData:myData mimeType:@"text/plain" fileName:[NSString stringWithFormat:@"control_logs-%@.csv",[LoggingSingleton getSubjectName]]];
+    }
+
 	// Fill out the email body text
 	NSString *emailBody = @"Log file attached.";
 	[picker setMessageBody:emailBody isHTML:NO];

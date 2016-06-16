@@ -18,20 +18,13 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Now enter the [words] in the order they appeared." id="4">
-                    <rect key="frame" x="20" y="84" width="728" height="134"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" id="15">
                     <rect key="frame" x="20" y="227" width="728" height="526"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" red="0.36153148219999998" green="0.72754614019999997" blue="0.92185507020000002" alpha="1" colorSpace="calibratedRGB"/>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9">
-                    <rect key="frame" x="605" y="152" width="143" height="67"/>
+                    <rect key="frame" x="605" y="160" width="143" height="67"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="43"/>
                     <state key="normal" title="Done">
@@ -41,6 +34,13 @@
                         <action selector="enterPressed:" destination="-1" eventType="touchUpInside" id="12"/>
                     </connections>
                 </button>
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Now enter the [words] in the order they appeared." id="4">
+                    <rect key="frame" x="20" y="59" width="728" height="134"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.55000000000000004" colorSpace="calibratedRGB"/>
         </view>
