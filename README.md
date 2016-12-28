@@ -1,6 +1,6 @@
-itrain
+iTrain
 ======
 
-The memory training application for the Adult Learing Lab at the Beckman isntitute UIUC.
+Working memory training application for the Adult Learning Lab at the Beckman Institute at UIUC.
 
 Maintaned by Brennan Payne and Thomas Deegan.
